@@ -83,6 +83,24 @@
     </resource>
 
 	<!-- Terminology -->
+    <resource>
+      <reference>
+        <reference value="CodeSystem/PCDESectionCode"/>
+      </reference>
+      <name value="PCDE Document Section Codes"/>
+      <description value="Codes for PCDE Document Sections"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/PCDESectionCode"/>
+      </reference>
+      <name value="PCDE Document Section Codes"/>
+      <description value="Codes for PCDE Document Sections"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
 	
     <page>
       <nameUrl value="toc.html"/>

@@ -107,6 +107,42 @@
 
 	
         <!-- Terminology -->
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="CodeSystem/PCDESectionCode"/>
+                      
+            </reference>
+                  
+            <name value="PCDE Document Section Codes"/>
+                  
+            <description value="Codes for PCDE Document Sections"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <groupingId value="terminology"/>
+                
+        </resource>
+            
+        <resource>
+                  
+            <reference>
+                        
+                <reference value="ValueSet/PCDESectionCode"/>
+                      
+            </reference>
+                  
+            <name value="PCDE Document Section Codes"/>
+                  
+            <description value="Codes for PCDE Document Sections"/>
+                  
+            <exampleBoolean value="false"/>
+                  
+            <groupingId value="terminology"/>
+                
+        </resource>
         	
     
         <page>
@@ -181,6 +217,16 @@
                     <page>
                         <nameUrl value="profile-composition.html"/>
                         <ns1:title xmlns:ns1="http://hl7.org/fhir" value="PCDE Composition"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="PCDESectionCode.html"/>
+                        <ns2:title xmlns:ns2="http://hl7.org/fhir" value="PCDE Document Section Codes"/>
+                        <generation value="generated"/>
+                    </page>
+                    <page>
+                        <nameUrl value="valueset-PCDESectionCode.html"/>
+                        <ns3:title xmlns:ns3="http://hl7.org/fhir" value="PCDE Document Section Codes"/>
                         <generation value="generated"/>
                     </page>
                 </page>

@@ -47,7 +47,22 @@
     <p>Value Sets and/or code systems defined as part of this implementation guide</p>
     <p>
         <table>
-            <tbody/>
+            <tbody>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="PCDESectionCode.html">
+                        •  PCDE Document Section Codes</a>
+                    </td>
+                    <td>Codes for PCDE Document Sections</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="valueset-PCDESectionCode.html">
+                        •  PCDE Document Section Codes</a>
+                    </td>
+                    <td>Codes for PCDE Document Sections</td>
+                </tr>
+            </tbody>
         </table>
     </p>
     <a name="5"> </a>

@@ -108,6 +108,10 @@
     "StructureDefinition/profile-pcde-bundle":{
     },
     "StructureDefinition/profile-composition":{
+    },
+    "CodeSystem/PCDESectionCode":{
+    },
+    "ValueSet/PCDESectionCode":{
     }
   }
 }
