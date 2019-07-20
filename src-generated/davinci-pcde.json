@@ -14,7 +14,7 @@
     "temp": "../temp/pages",
     "output": "../output",
     "txCache": "txcache",
-    "history" : "http://hl7.org/fhir/us/davinci-pas/history.cfml",
+    "history" : "http://hl7.org/fhir/us/davinci-pcde/history.cfml",
     "qa": "../temp/qa",
     "specification": "http://hl7.org/fhir/R4/"
   },
@@ -90,7 +90,7 @@
   },
   "sct-edition" : "http://snomed.info/sct/731000124108",
   "no-inactive-codes" : "true",
-  "canonicalBase": "http://hl7.org/fhir/us/davinci-pas",
+  "canonicalBase": "http://hl7.org/fhir/us/davinci-pcde",
   "dependencyList": [
     {
       "name" : "core",
@@ -101,8 +101,13 @@
   ],
   "source": "davinci-pcde.xml",
   "spreadsheets": [
-    "claim-profile-spreadsheet.xml"
+    "bundle-profile-spreadsheet.xml",
+    "composition-profile-spreadsheet.xml"
   ],
   "resources": {
+    "StructureDefinition/profile-pcde-bundle":{
+    },
+    "StructureDefinition/profile-composition":{
+    }
   }
 }

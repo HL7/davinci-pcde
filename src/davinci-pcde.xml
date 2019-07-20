@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../src-generated/schemas/fhir-single.xsd">
   <id value="davinci-pcde"/>
-  <url value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/davinci-pcde"/>
+  <url value="http://hl7.org/fhir/us/davinci-pcde/ImplementationGuide/davinci-pcde"/>
   <name value="PayerCoverageDecisionExchange"/>
   <title value="Da Vinci - Payer Coverage Decision Exchange"/>
   <status value="draft"/>
@@ -30,7 +30,10 @@
   <definition>
     <!-- Note: Order of these spreadsheets matters -->
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="claim-profile-spreadsheet.xml"/>
+      <valueUri value="bundle-profile-spreadsheet.xml"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="composition-profile-spreadsheet.xml"/>
     </extension>
     <grouping id="operations">
       <name value="Operations"/>
@@ -52,18 +55,35 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the PCDE profiles"/>
     </grouping>
-<!--    <resource>
+	
+	<!-- Profiles -->
+    <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-claim"/>
+        <reference value="StructureDefinition/profile-pcde-bundle"/>
       </reference>
-      <name value="PAS Claim"/>
-      <description value="PAS constraints on Claim resource mandating support for elements relevant to the prior authorization request"/>
+      <name value="PCDE Bundle"/>
+      <description value="PCDE constaints on Bundle to enforce a document bundle"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
-    </resource>-->
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-composition"/>
+      </reference>
+      <name value="PCDE Composition"/>
+      <description value="PCDE constaints on Composition to define the structure of the data exchange"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+
+	<!-- Terminology -->
+	
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
