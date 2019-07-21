@@ -1,14 +1,14 @@
 Complying with this implementation guide means complying with a number of profiles, extensions, value sets and custom search parameters.  This page provides an overview of where this information can be found.
 
-The FHIR artifacts used by PAS are organized according to whether the content developed as part of the US Core implementation guides or is Da Vinci-specific.
+The FHIR artifacts used by PCDE are organized according to whether the content developed as part of the US Core implementation guides or is Da Vinci-specific.
 
 ### Artifact Lists
 <table>
   <tr>
-    <td><a href="artifacts.html">FHIR PAS-specific Artifacts</a></td>
+    <td><a href="artifacts.html">FHIR PCDE-specific Artifacts</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/2019Jan">US Core (2.1.0 - R4 based)</a></td>
+    <td><a href="http://hl7.org/fhir/us/core/STU3">US Core (3.0.0 - R4 based)</a></td>
   </tr>
 </table>
 

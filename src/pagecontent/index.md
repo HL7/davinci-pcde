@@ -1,12 +1,4 @@
 {% raw %}
-{% endraw %}
-<!--ReleaseHeader-->
-<p style="background-color: yellow; border: 1px solid maroon; padding: 5px;">
-  This is the {{site.data.info.ballotstatus}} version of the {{site.data.fhir.igTitle}} Implementation Guide,  based on <a href="{{site.data.fhir.path}}">FHIR Version {{site.data.fhir.version}}</a>.  
-  See the <a href="{{site.data.fhir.canonical}}/history.html">Directory of published versions</a> for other versions and for a change history.<br/>
-  This specification was developed by <a href="{{site.data.fhir.ig.contact[0].telecom[0]}}">{{site.data.fhir.ig.publisher}}</a>
-</p>
-<!--EndReleaseHeader-->
 <blockquote class="stu-note">
 <p>
 This specification is currently undergoing ballot and connectathon testing.  It is expected to evolve, possibly significantly, as part of that process.
@@ -29,6 +21,7 @@ Individuals interested in participating in the Prior Authorization Support or ot
 Note that this implementation guide is intended to support mapping between FHIR and X12 transactions.  To respect X12 intellectual property, all mapping and X12-specific terminology information will be solely published by X12 and made available in accordance with X12 rules - which may require membership and/or payment.
 </p>
 </blockquote>
+{% endraw %}
 
 
 ### Overview
@@ -49,6 +42,6 @@ The implementation guide is organized into the following sections:
 ### Dependencies
 This implementation guide relies on the following other specifications:
 * **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
-* **[US Core STU3 - draft](http://hl7.org/fhir/us/core/2019Jan)** - The balloted version of US Core based on FHIR R4.  This implementation guide will be updated to be based on the final R4 release once it is published.
+* **[US Core STU3 - draft](http://hl7.org/fhir/us/core/STU3)** - The balloted version of US Core based on FHIR R4.  This implementation guide will be updated to be based on the final R4 release once it is published.
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
