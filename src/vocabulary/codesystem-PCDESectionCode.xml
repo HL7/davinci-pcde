@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeSystem xmlns="http://hl7.org/fhir">
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <id value="PCDESectionCode"/>
-<url value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDESectionCode"/>
-<version value="0.0.0"/>
-<name value="PCDEDocumentSectionCode"/>
-<status value="draft"/>
-<experimental value="false"/>
-<date value="2018-03-13T08:16:34-07:00"/>
-<contact>
-  <telecom>
-    <system value="url"/>
-  </telecom>
-  <telecom>
-    <system value="email"/>
-  </telecom>
-</contact>
-<description value="The code specifying different PCDE Sections."/>
-<jurisdiction>
-  <coding>
-    <system value="urn:iso:std:iso:3166"/>
-    <code value="US"/>
-  </coding>
-</jurisdiction>
-<caseSensitive value="true"/>
-<valueSet value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDESectionCode"/>
-<content value="complete"/>
-<concept>
-  <code value="activeTreatment"/>
-  <display value="Active Treatments"/>
-  <definition value="A section detailing information about ongoing, current, active treatments."/>
-</concept>
-<concept>
-  <code value="treatment"/>
-  <display value="Treatment"/>
-  <definition value="A sub-section detailing treatment information."/>
-</concept>
-<concept>
-  <code value="priorCoverage"/>
-  <display value="Prior Coverage"/>
-  <definition value="A sub-section detailing current active prior authorizations."/>
-</concept>
-<concept>
-  <code value="supportingInfo"/>
-  <display value="Supporting Information"/>
-  <definition value="A sub-section detailing previous observations and therapies that support the current treatment."/>
-</concept>
-<concept>
-  <code value="otherDocumentation"/>
-  <display value="Other Document"/>
-  <definition value="A section detailing additional information deemed relevant to the transfer of care."/>
-</concept>
+  <url value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDESectionCode"/>
+  <version value="0.0.0"/>
+  <name value="PCDEDocumentSectionCode"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2018-03-13T08:16:34-07:00"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+    </telecom>
+  </contact>
+  <description value="The code specifying different PCDE Sections."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <valueSet value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDESectionCode"/>
+  <content value="complete"/>
+  <concept>
+    <code value="activeTreatment"/>
+    <display value="Active Treatments"/>
+    <definition value="A section detailing information about ongoing, current, active treatments."/>
+  </concept>
+  <concept>
+    <code value="treatment"/>
+    <display value="Treatment"/>
+    <definition value="A sub-section detailing treatment information."/>
+  </concept>
+  <concept>
+    <code value="priorCoverage"/>
+    <display value="Prior Coverage"/>
+    <definition value="A sub-section detailing current active prior authorizations."/>
+  </concept>
+  <concept>
+    <code value="supportingInfo"/>
+    <display value="Supporting Information"/>
+    <definition value="A sub-section detailing previous observations and therapies that support the current treatment."/>
+  </concept>
+  <concept>
+    <code value="otherDocumentation"/>
+    <display value="Other Document"/>
+    <definition value="A section detailing additional information deemed relevant to the transfer of care."/>
+  </concept>
 </CodeSystem>

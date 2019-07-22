@@ -136,6 +136,10 @@
     },
     "StructureDefinition/profile-careplan":{
     },
+    "CodeSystem/PCDEDocumentCode":{
+    },
+    "ValueSet/PCDEDocumentCode":{
+    },
     "CodeSystem/PCDESectionCode":{
     },
     "ValueSet/PCDESectionCode":{

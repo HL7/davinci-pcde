@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEDocumentCode",
+  "code" : "pcde"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEDocumentCode\" is not known for the code \"pcde\"; The code provided (http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEDocumentCode#pcde) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

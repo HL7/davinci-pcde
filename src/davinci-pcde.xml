@@ -120,6 +120,24 @@
 	<!-- Terminology -->
     <resource>
       <reference>
+        <reference value="CodeSystem/PCDEDocumentCode"/>
+      </reference>
+      <name value="PCDE Document Codes"/>
+      <description value="Codes for PCDE Documents"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/PCDEDocumentCode"/>
+      </reference>
+      <name value="PCDE Document Codes"/>
+      <description value="Codes for PCDE Documents"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="terminology"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/PCDESectionCode"/>
       </reference>
       <name value="PCDE Document Section Codes"/>

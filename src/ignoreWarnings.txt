@@ -11,3 +11,5 @@ The link 'http://hl7.org/fhir/us/davinci-pdex/2019Jun/full-ig.zip' for "2019Jul"
 The link 'http://hl7.org/fhir/us/davinci-cdex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
 The link 'http://hl7.org/fhir/us/davinci-hrex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
 The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/full-ig.zip' for "2019Sep" cannot be resolved
+// We're not drawing from LOINC yet
+None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/doc-typecodes (http://hl7.org/fhir/ValueSet/doc-typecodes, and a code is recommended to come from this value set) (codes = http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEDocumentCode#pcde)
