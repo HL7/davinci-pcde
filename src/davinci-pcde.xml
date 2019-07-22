@@ -55,6 +55,9 @@
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="composition-profile-spreadsheet.xml"/>
     </extension>
+    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="careplan-profile-spreadsheet.xml"/>
+    </extension>
     <grouping id="operations">
       <name value="Operations"/>
       <description value="Operations to be supported by EMRs and payor systems conforming to this implementation guide"/>
@@ -98,6 +101,18 @@
       </reference>
       <name value="PCDE Composition"/>
       <description value="PCDE constaints on Composition to define the structure of the data exchange"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/profile-careplan"/>
+      </reference>
+      <name value="PCDE CarePlan"/>
+      <description value="PCDE constaints on CarePlan to define the details of active treatments"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
