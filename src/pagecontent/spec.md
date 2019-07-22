@@ -59,7 +59,7 @@ The following diagram shows the workflow that is supported by this implementatio
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-bottom:30px" width="800px" src="workflow.png" alt="PCDE Workflow"/>
+  <img style="padding-bottom:30px" width="600px" src="workflow.png" alt="PCDE Workflow"/>
 </figure>
 {::options parse_block_html="true" /}
 
@@ -91,11 +91,11 @@ All Coverage Transition documents SHALL comply with the [PCDE Bundle](profile-pc
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-bottom:30px" width="800px" src="document.png" alt="Coverage Transition Document structure"/>
+  <img style="padding-bottom:30px" width="250px" src="document.png" alt="Coverage Transition Document structure"/>
 </figure>
 {::options parse_block_html="true" /}
 
-There are two major sections: [active treatments](#active-treatment) and [other documentation](#other-documentation)
+There are two major sections: [Active Treatments](#active-treatment) and [Other Documentation](#other-documentation)
 
 ##### Active Treatment
 This section should repeat for each "active treatment" the patient is receiving under coverage from the original payer at the time the document is prepared.  Active treatments might include:
@@ -107,7 +107,7 @@ This section should repeat for each "active treatment" the patient is receiving 
 
 Payer knowledge of what treatments are 'active' might come from prior authorizations, recently submitted claims or from clinical information shared with the payer as part of care management or other processes.
 
-For each active treatment the following sub-sections are available:
+For each active treatment the following three sub-sections are available:
 
 ###### Treatment
 

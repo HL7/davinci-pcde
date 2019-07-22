@@ -63,3 +63,5 @@ Organizational participants (those organizations having attendees on at least 4 
 Additional regular (&gt;= 4 meetings) participants: Christy Dodson, Peter Muir, Rachel Foerster, Raj, Rim Cothern
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
+
+This IG includes icons licensed under Creative Commons-Attribution license by Alex Auda Samora (health insurance) and person by Caitlin George from the Noun Project (person) from the Noun Project
