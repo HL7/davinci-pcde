@@ -137,6 +137,17 @@
       <groupingId value="terminology"/>
     </resource>
 	
+	<!-- Examples -->
+    <resource>
+      <reference>
+        <reference value="Bundle/pcde-example"/>
+      </reference>
+      <name value="PCDE example"/>
+      <description value="Example of a Coverage Exchange document"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="examples"/>
+    </resource>
+
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
