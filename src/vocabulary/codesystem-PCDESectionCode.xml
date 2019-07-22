@@ -23,7 +23,7 @@
     </coding>
   </jurisdiction>
   <caseSensitive value="true"/>
-  <valueSet value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDESectionCode"/>
+  <valueSet value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
   <content value="complete"/>
   <concept>
     <code value="activeTreatment"/>
