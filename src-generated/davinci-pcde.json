@@ -102,12 +102,15 @@
   "source": "davinci-pcde.xml",
   "spreadsheets": [
     "bundle-profile-spreadsheet.xml",
-    "composition-profile-spreadsheet.xml"
+    "composition-profile-spreadsheet.xml",
+    "careplan-profile-spreadsheet.xml"
   ],
   "resources": {
     "StructureDefinition/profile-pcde-bundle":{
     },
     "StructureDefinition/profile-composition":{
+    },
+    "StructureDefinition/profile-careplan":{
     },
     "CodeSystem/PCDESectionCode":{
     },
