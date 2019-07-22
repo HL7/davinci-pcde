@@ -1,10 +1,13 @@
-// The build process ought to be generating narrative for profiles - it used to...
-//A resource should have narrative for robust management [text.div.exists()]
-
-// These should be resolving to the core spec (though in some cases even the right URLs don't exist because the core spec itself is wrong)
-//The link 'http://hl7.org/fhir/us/core/extension-rendered-value.html' for "Rendered Value extension" cannot be resolved
-//The link 'http://hl7.org/fhir/us/core/device.html#5.11.3.2.2' for "UDI" cannot be resolved
-//The link 'http://hl7.org/fhir/us/core/device.html#5.11.3.2.2' for "Unique device identifier (UDI)" cannot be resolved
-//The link 'http://hl7.org/fhir/us/core/device-mappings.html#udi' for "UDI mappings" cannot be resolved
-
-// These are just info messages and aren't relevant
+// The following files don't yet exist at the target link, but they will
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html' for "PAS Profiles (0.1.0 - Sept 2019 ballot)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep' for "PAS (0.1.0 - Sept 2019 ballot)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html' for "Da Vinci Prior Authorization Support (PAS) (0.1.0 - Sept 2019 ballot)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep' for "Da Vinci Prior Authorization Support (PAS)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep' for "Da Vinci PAS Sept 2019 ballot" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claim.html' for "PAS Prior Authorization" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claimresponse.html' for "PAS Prior Authorization Response" cannot be resolved
+// The following files exist
+The link 'http://hl7.org/fhir/us/davinci-pdex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-cdex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-hrex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/full-ig.zip' for "2019Sep" cannot be resolved

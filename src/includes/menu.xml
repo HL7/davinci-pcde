@@ -41,7 +41,19 @@
         <a href="{{site.data.info.assets}}artifacts.html">PAS-specific Artifacts</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/core/2019Jan">US Core (3.0.0 - R4 based)</a>
+        <a href="http://hl7.org/fhir/us/core/STU3">US Core (3.0.0 - R4 based)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-pdex/2019Jun/profiles.html">PDex Profiles (0.1.0 - July 2019 ballot)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-cdex/2019Jun/profiles.html">CDex Profiles (0.1.0 - July 2019 ballot)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun/profiles.html">HRex Profiles (0.1.0 - July 2019 ballot)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html">PAS Profiles (0.1.0 - Sept 2019 ballot)</a>
       </li>
     </ul>
   </li>  
@@ -52,6 +64,21 @@
     <ul class="dropdown-menu">
       <li>
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/core/STU3">US Core (3.0.0 - R4 based)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-pdex/2019Jun">PDex (0.1.0 - July 2019 ballot)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-cdex/2019Jun">CDex (0.1.0 - July 2019 ballot)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun">HRex (0.1.0 - July 2019 ballot)</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/davinci-pas/2019Sep">PAS (0.1.0 - Sept 2019 ballot)</a>
       </li>
     </ul>
   </li>

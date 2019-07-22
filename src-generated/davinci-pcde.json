@@ -97,6 +97,30 @@
       "version" : "3.0.0",
       "location" : "http://hl7.org/fhir/us/core",
       "package" : ""
+    },
+    {
+      "name" : "davinci_pdex",
+      "version" : "0.1.0",
+      "location" : "http://hl7.org/fhir/us/davinci-pdex",
+      "package" : ""
+    },
+    {
+      "name" : "davinci_cdex",
+      "version" : "0.1.0",
+      "location" : "http://hl7.org/fhir/us/davinci-cdex",
+      "package" : ""
+    },
+    {
+      "name" : "davinci_hrex",
+      "version" : "0.1.0",
+      "location" : "http://hl7.org/fhir/us/davinci-hrex",
+      "package" : ""
+    },
+    {
+      "name" : "davinci_pas",
+      "version" : "current",
+      "location" : "http://hl7.org/fhir/us/davinci-pas",
+      "package" : ""
     }
   ],
   "source": "davinci-pcde.xml",
