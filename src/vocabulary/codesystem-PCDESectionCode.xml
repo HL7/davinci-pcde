@@ -3,7 +3,7 @@
   <id value="PCDESectionCode"/>
 <url value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDESectionCode"/>
 <version value="0.0.0"/>
-<name value="Codes for PCDE Document Sections"/>
+<name value="PCDEDocumentSectionCode"/>
 <status value="draft"/>
 <experimental value="false"/>
 <date value="2018-03-13T08:16:34-07:00"/>
