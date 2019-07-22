@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEDocumentCode",
+    "code" : "pcde"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "concept" : [{
+        "code" : "34133-9"
+      },
+      {
+        "code" : "18726-0"
+      }],
+      "valueSet" : ["https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.4.1",
+      "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.31",
+      "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.20.22",
+      "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.8.1",
+      "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.6.1"]
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Unable to find value set https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.4.1"
+}
+-------------------------------------------------------------------------------------

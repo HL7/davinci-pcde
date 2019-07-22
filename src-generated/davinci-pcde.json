@@ -145,6 +145,10 @@
     "ValueSet/PCDESectionCode":{
     },
     "Bundle/pcde-example":{
+    },
+    "Bundle/pcde-communicationrequest-example":{
+    },
+    "Bundle/pcde-communication-example":{
     }
   }
 }

@@ -160,8 +160,26 @@
       <reference>
         <reference value="Bundle/pcde-example"/>
       </reference>
-      <name value="PCDE example"/>
+      <name value="PCDE Bundle example"/>
       <description value="Example of a Coverage Exchange document"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/pcde-communicationrequest-example"/>
+      </reference>
+      <name value="PCDE CommunicationRequest example"/>
+      <description value="Example of a communication request for a Coverage Exchange document"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/pcde-communication-example"/>
+      </reference>
+      <name value="PCDE Communication example"/>
+      <description value="Example of a Coverage Exchange document returned in a Communication"/>
       <exampleBoolean value="false"/>
       <groupingId value="examples"/>
     </resource>
