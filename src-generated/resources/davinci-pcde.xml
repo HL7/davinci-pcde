@@ -60,7 +60,6 @@
             
     
     
-    
         <grouping id="operations">
                   
             <name value="Operations"/>
@@ -104,7 +103,6 @@
 	
         <!-- Profiles -->
             
-    
     
 
 	
@@ -222,18 +220,13 @@
                         <generation value="generated"/>
                     </page>
                     <page>
-                        <nameUrl value="profile-careplan.html"/>
-                        <ns2:title xmlns:ns2="http://hl7.org/fhir" value="PCDE CarePlan"/>
-                        <generation value="generated"/>
-                    </page>
-                    <page>
                         <nameUrl value="PCDESectionCode.html"/>
-                        <ns3:title xmlns:ns3="http://hl7.org/fhir" value="PCDE Document Section Codes"/>
+                        <ns2:title xmlns:ns2="http://hl7.org/fhir" value="PCDE Document Section Codes"/>
                         <generation value="generated"/>
                     </page>
                     <page>
                         <nameUrl value="valueset-PCDESectionCode.html"/>
-                        <ns4:title xmlns:ns4="http://hl7.org/fhir" value="PCDE Document Section Codes"/>
+                        <ns3:title xmlns:ns3="http://hl7.org/fhir" value="PCDE Document Section Codes"/>
                         <generation value="generated"/>
                     </page>
                 </page>

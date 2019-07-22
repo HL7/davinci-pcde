@@ -31,13 +31,6 @@
                     </td>
                     <td>PCDE constaints on Composition to define the structure of the data exchange</td>
                 </tr>
-                <tr>
-                    <td style="column-width:30%">
-                        <a href="profile-careplan.html">
-                        •  PCDE CarePlan</a>
-                    </td>
-                    <td>PCDE constaints on CarePlan to define the details of existing treatments</td>
-                </tr>
             </tbody>
         </table>
     </p>
