@@ -5,17 +5,27 @@ The FHIR artifacts used by PCDE are organized according to whether the content d
 ### Artifact Lists
 <table>
   <tr>
-    <td><a href="artifacts.html">FHIR PCDE-specific Artifacts</a></td>
+    <td><a href="artifacts.html">PCDE-specific Artifacts</a></td>
   </tr>
   <tr>
     <td><a href="http://hl7.org/fhir/us/core/STU3">US Core (3.0.0 - R4 based)</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://hl7.org/fhir/us/davinci-pdex/2019Jun/profiles.html">Da Vinci Payer Data Exchange (PDex) (0.1.0 July 2019 ballot)</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://hl7.org/fhir/us/davinci-cdex/2019Jun/profiles.html">Da Vinci Clinical Data Exchange (CDex) (0.1.0 July 2019 ballot)</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun/profiles.html">Da Vinci Health Record Exchange (HRex) (0.1.0 - July 2019 ballot)</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html">Da Vinci Prior Authorization Support (PAS) (0.1.0 - Sept 2019 ballot)</a></td>
   </tr>
 </table>
 
 Additional information about the use of these artifacts can be found in the [main specification](spec.html#profiles).
 
-
-These FHIR artifacts define the clinical data that can be submitted as part of a prior authorization submission and/or included as part of a prior authorization response using the [Claim submit](Claim-submit.html) operation.
 
 The artifacts are of four types:
 

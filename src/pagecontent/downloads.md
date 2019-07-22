@@ -5,6 +5,10 @@ This implementation guide is web-based and is intended to be browsed online.  Ho
 * This [full IG](full-ig.zip)
 * The [resource definitions](definitions.json.zip)  from this IG for use with the FHIR validator (see below)
 * The full FHIR [R4]({{site.data.fhir.path}}fhir-spec-r4.zip) specifications
+* The [2019Jul](http://hl7.org/fhir/us/davinci-pdex/2019Jun/full-ig.zip) version of the Da Vinci Payer Data Exchange (PDex) implementation guide
+* The [2019Jul](http://hl7.org/fhir/us/davinci-cdex/2019Jun/full-ig.zip) version of the Da Vinci Clinical Data Exchange (PDex) implementation guide
+* The [2019Jul](http://hl7.org/fhir/us/davinci-hrex/2019Jun/full-ig.zip) version of the Da Vinci Health Record Exchange (HRex) implementation guide
+* The [2019Sep](http://hl7.org/fhir/us/davinci-pas/2019Sep/full-ig.zip) version of the Da Vinci Prior Authorization Support (PAS) implementation guide
 * A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity
 
 <!-- Todo: reference implementations -->
