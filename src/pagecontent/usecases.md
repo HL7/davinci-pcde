@@ -1,5 +1,3 @@
-###PCD IG Home Page
-
 ### Current environment
 Patients that move from one insurance carrier to another frequently lose coverage for existing care for chronic and acute conditions until the new payer is able to verify the clinical need for such treatments.  This frequently requires the payer to contact existing providers or have the patient see a new provider to establish documentation showing that the care is medically necessary and appropriate. The process creates a significant burden on providers and risk/cost to the patient.
 
