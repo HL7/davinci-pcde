@@ -3,7 +3,7 @@
   "tool": "jekyll",
   "logging": ["html"],
   "version": "4.0.0",
-  "fixed-business-version": "0.0.0",
+  "fixed-business-version": "0.1.0",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
   "license": "CC0-1.0",
@@ -130,11 +130,11 @@
     "careplan-profile-spreadsheet.xml"
   ],
   "resources": {
-    "StructureDefinition/profile-pcde-bundle":{
+    "StructureDefinition/profile-careplan":{
     },
     "StructureDefinition/profile-composition":{
     },
-    "StructureDefinition/profile-careplan":{
+    "StructureDefinition/profile-pcde-bundle":{
     },
     "CodeSystem/PCDEDocumentCode":{
     },

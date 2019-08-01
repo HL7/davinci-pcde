@@ -85,10 +85,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-pcde-bundle"/>
+        <reference value="StructureDefinition/profile-careplan"/>
       </reference>
-      <name value="PCDE Bundle"/>
-      <description value="PCDE constaints on Bundle to enforce a document bundle"/>
+      <name value="PCDE CarePlan"/>
+      <description value="PCDE constaints on CarePlan to define the details of active treatments"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
@@ -109,10 +109,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/profile-careplan"/>
+        <reference value="StructureDefinition/profile-pcde-bundle"/>
       </reference>
-      <name value="PCDE CarePlan"/>
-      <description value="PCDE constaints on CarePlan to define the details of active treatments"/>
+      <name value="PCDE Bundle"/>
+      <description value="PCDE constaints on Bundle to enforce a document bundle"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
