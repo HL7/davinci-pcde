@@ -1,8 +1,8 @@
 {
 	"package-id": "hl7.fhir.us.davinci-pcde",
 	"title": "Da Vinci Payer Coverage Decision Exchange (PCDE) FHIR IG",
-	"canonical": "http://hl7.org/fhir/us/davinci-pas",
-	"introduction": "This implementation guide defines a mechanism for submitting prior authorization requests in a manner that is mappable to the corresponding X12 transactions.\r\n\r\nThe DaVinci PAS IG includes profiles for both FHIR STU3 and R4",
+	"canonical": "http://hl7.org/fhir/us/davinci-pcde",
+	"introduction": "This implementation guide defines a mechanism for sharing information from an 'old' payer to a 'new' payer when a patient has switched plans to help ensure continuity of care and reduce/eliminate the need for repeating lab or diagnositic tests, re-trying previous therapies, etc.\r\n\r\nThe DaVinci PCDE IG is targeted to FHIR R4",
 	"list": [
 		{
 			"version": "current",
@@ -14,7 +14,7 @@
 			"version": "0.1.0",
 			"date": "2019-08-09",
 			"descmd": "First public ballot",
-			"path": "http://hl7.org/fhir/us/davinci-pas/2019Sep",
+			"path": "http://hl7.org/fhir/us/davinci-pcde/2019Sep",
 			"status": "ballot",
 			"sequence": "STU 1"
 		}
