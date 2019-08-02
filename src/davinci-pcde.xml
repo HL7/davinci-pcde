@@ -122,7 +122,7 @@
       <reference>
         <reference value="CodeSystem/PCDEDocumentCode"/>
       </reference>
-      <name value="PCDE Document Codes"/>
+      <name value="PCDE Document Codes Code System"/>
       <description value="Codes for PCDE Documents"/>
       <exampleBoolean value="false"/>
       <groupingId value="terminology"/>
@@ -131,7 +131,7 @@
       <reference>
         <reference value="ValueSet/PCDEDocumentCode"/>
       </reference>
-      <name value="PCDE Document Codes"/>
+      <name value="PCDE Document Codes Value Set"/>
       <description value="Codes for PCDE Documents"/>
       <exampleBoolean value="false"/>
       <groupingId value="terminology"/>
@@ -140,7 +140,7 @@
       <reference>
         <reference value="CodeSystem/PCDESectionCode"/>
       </reference>
-      <name value="PCDE Document Section Codes"/>
+      <name value="PCDE Document Section Codes Code System"/>
       <description value="Codes for PCDE Document Sections"/>
       <exampleBoolean value="false"/>
       <groupingId value="terminology"/>
@@ -149,7 +149,7 @@
       <reference>
         <reference value="ValueSet/PCDESectionCode"/>
       </reference>
-      <name value="PCDE Document Section Codes"/>
+      <name value="PCDE Document Section Codes Value Set"/>
       <description value="Codes for PCDE Document Sections"/>
       <exampleBoolean value="false"/>
       <groupingId value="terminology"/>

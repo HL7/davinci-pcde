@@ -39,8 +39,8 @@ This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) v
 Because of this IG's focus on document creation, implementers should also familiarize themselves with the FHIR [Composition]({{site.data.fhir.path}}composition.html) and the guidelines around the creation and processing of [FHIR documents]({{site.data.fhir.path}}documents.html).
 
 This implementation guide  builds on the following IGs:
-* [Da Vinci Provider Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun)
-* [Da Vinci Provider Data Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex/2019Jun)
+* [Da Vinci Payer Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun)
+* [Da Vinci Clinical Data Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex/2019Jun)
 * [Da Vinci Health Record Exchange (HRex)](http://hl7.org/fhir/us/davinci-hrex/2019Jun)
 * [Da Vinci Prior Authorization Support (PAS)](http://hl7.org/fhir/us/davinci-pas/2019Sep)
 * [US Core 3.0 (R4-based)](http://hl7.org/fhir/us/core/STU3)

@@ -8,6 +8,8 @@ Project leads:
 
 * Robert Dieterle (Enable Care, LLC)
 * Viet Nguyen (Stratametrics, LLC)
+* Julia Skapik (Cognitive Medical Systems)
+* Nita Thingalaya (IBC)
 
 Project management and coordination:
 
