@@ -1,5 +1,5 @@
 ### Current environment
-Patients that move from one insurance carrier to another frequently lose coverage for existing care for chronic and acute conditions until the new payer is able to verify the clinical need for such treatments.  This frequently requires the payer to contact existing providers or have the patient see a new provider to establish documentation showing that the care is medically necessary and appropriate. The process creates a significant burden on providers and risk/cost to the patient.
+Patients that move from one payer to another frequently experience interruptions or delays to existing care for chronic and acute conditions related to the inability of the new payer to obtain information about the ongoing treatment, understand its progress and verify the clinical need for such treatments.  This frequently requires the patient or providers to change therapies, tolerate delays in care, see additional providers or schedule additional visits, and fill out or resubmit additional documentation showing that the care is medically necessary and appropriate. The process creates a significant burden on providers, add unnecessary costs, and introduces risk to the patient.
 
 ### Background
 The Healthcare industry in the US has recognized the need to support, where possible, continuity of care for both chronic and acute problems for individuals that move from one payer to another. The CMS NPRM on interoperability published in the Federal Register on March 3, 2019, requires that providers enable members to exchange clinical information from a prior payer to the current payer for a period of 5 years after they leave a plan and move to another covered plan. The exchange of information is intended, as indicated in the preamble to the NPRM, to enable continuity of care as a member moves from one covered plan to another without: 
@@ -7,10 +7,10 @@ The Healthcare industry in the US has recognized the need to support, where poss
 2. have care terminated,  or
 3. requiring providers to submit additional documentation to the new plan that was already available to the prior plan.
 
-The goal is to provide for continuity of care and to minimise provider burden.  While the CMS NPRM points to the ability to exchange clinical data that is, at a minimum, defined by USCDI V1.0, the ability to exchange this data set does not provide the full set of information to enable the new payer to meet the goals stated above. 
+The goal is to provide for continuity of care and to minimize provider burden.  While the CMS NPRM points to the ability to exchange clinical data that is, at a minimum, defined by USCDI V1.0, the ability to exchange this data set does not provide the full set of information to enable the new payer to meet the goals stated above. 
 
 ### In Scope
-This Implementation Guide (IG) is focused on organizing and exchanging information from a prior payer associated with current treatments to allow the new payer to continue these treatments without placing an additional burden on either the member or the provider.
+This Implementation Guide (IG) is focused on organizing and exchanging information from a prior payer associated with current treatments to allow the new payer to continue these treatments without placing an additional burden on either the member or the provider or creating interruptions in care.
 
 ### Out-of-Scope
 This implementation guide is not:
@@ -35,7 +35,7 @@ All of the information may not be available in a structured format (or capable o
 ### Clinical Requirements
 Clinical requirements to support this implementation guide include the following:
 
-1.  the ability to define current care that is being provided to the member which includes not just traditional treatments (e.g. home oxygen therapy for COPD. medications for management of diabetes) but also participation in disease management programs to support a member's chronic illnesses and help manage either specific clinical outcomes or quality of life;
+1.  the ability to define current care that is being provided to the member which includes not just traditional treatments (e.g. home oxygen therapy for COPD. medications for management of diabetes) and their progress and the relevant providers of that care, but also participation in disease management programs to support a member's chronic illnesses and help manage either specific clinical outcomes or quality of life;
 2.  conditions that led to the need for these treatments, such as: COPD - to indicating a need for home oxygen therapy, diabetes - basis for medication management of diabetes, organ transplant - indicating the need for immunosuppressants, etc.;
 3.  guidelines that are used to decide that such a treatment is appropriate.  These can include commercial guidelines such as MCG, InterQual and others.   The goal is to include a reference (e.g. URL) to the appropriate guideline;
 4.	any specific prior authorizations that are in effect to support the treatment such as authorization for home oxygen therapy, and

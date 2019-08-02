@@ -33,7 +33,7 @@ The full set of profiles defined in or used by this implementation guide can be 
 This IG defines custom codes for document types and sections.  These codes should be considered 'temporary'.  After implementation testing and confirmation, these custom codes will migrate to standardized codes in an official code system - most likely LOINC.
 
 ### Data Exchange
-This data exchange builds on the Da Vinci [Payer Data Exhange (PDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun) and [Clinical Data Exhange (CDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun) implementation guides, leveraging the [OAuth 2.0-based](http://hl7.org/fhir/us/davinci-pdex/2019Jun/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [non-Task Solicited Communication](http://hl7.org/fhir/us/davinci-cdex/2019Jun/Request_(Solicited_Communication).html#solicited-communication-without-task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
+This data exchange builds on the Da Vinci [Payer Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun) and [Clinical Data Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex/2019Jun) implementation guides, leveraging the [OAuth 2.0-based](http://hl7.org/fhir/us/davinci-pdex/2019Jun/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [non-Task Solicited Communication](http://hl7.org/fhir/us/davinci-cdex/2019Jun/Request_(Solicited_Communication).html#solicited-communication-without-task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
 
 
 #### Pre-conditions
@@ -47,7 +47,7 @@ For this implementation guide to be applicable, the following conditions must be
 
 
 #### Workflow
-1. The member uses an interface/portal or SMART app within the new plan to authenticate to the old plan and authorize the prior plan to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
+1. The member uses an interface/portal or SMART app within the new plan to authenticate to the prior plan and authorize the prior plan to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
 
 2. Using the token, the new payer's system requests a [Coverage Transition document](#coverage-transition-document-structure) from the prior plan.  The prior plan either locates an existing document (previously prepared) or assembles the information needed and creates the document
 
@@ -64,15 +64,15 @@ The following diagram shows the workflow that is supported by this implementatio
 {::options parse_block_html="true" /}
 
 #### Authorization
-This IG supplement PDex and uses the same authorization process for member directed exchange. By using the SMART on FHIR implementation of OAuth 2.0 and providing an appropriate access token from a prior prayer plan to the new plan, the new plan's application can authenticate to the prior plan and gain access to the specific member's data.
+This IG supplements PDex and uses the same authorization process for member directed exchange. By using the SMART on FHIR implementation of OAuth 2.0 and providing an appropriate access token from a prior prayer plan to the new plan, the new plan's application can authenticate to the prior plan and gain access to the specific member's data.
 
 Since the CMS Notice of Proposed Rule Making requires that the member may direct the exchange of information from a prior plan for up to five years after a member leaves a plan, there may be the need to permit the current plan to access more than just the prior plan.  It may need to include a number of prior plans that fall within the 5 year time frame.  Target plans SHALL therefore allow the user to authenticate to multiple other payers to retrieve relevant data.
 
 ##### Handling Sensitive Data
-The prior plan SHALL provide a method for the member to verify if it is ok to exchange sensitive data as defined by federal, state and, where appropriate, local statue. In the event that the member does not authorise exchanges sensitive data, the prior plan SHALL have a method to sequester such information and make it unavailable for exchange.  This SHOULD happen as part of the authorization process.
+The prior plan SHALL provide a method for the member to verify if it is ok to exchange sensitive data as defined by federal, state and, where appropriate, local statue. In the event that the member does not authorize exchanges of sensitive data, the prior plan SHALL have a method to sequester such information and make it unavailable for exchange.  This SHOULD happen as part of the authorization process.
 
 ##### Token duration
-In many cases, the Coverage Transition document either won't already exist or won't be up-to-date and some degree of manual work will be required by payer staff to gather content, organize it and provide appropriate document narrative will be required.  This may take hours or even a few days.  The duration of the authorization token SHALL therefore take this into account and allow sufficient time that the authorized access will not expire prior to the document being delivered.  (Allowance should also be made for a delay of 1-2 days in retrieval by the target system in the event of a plannned or unplanned system outage.)
+In many cases, the Coverage Transition document either won't already exist or won't be up-to-date and some degree of manual work will be required by payer staff to gather content, organize it and provide the appropriate document narrative.  This may take hours or even a few days.  The duration of the authorization token SHALL therefore take this into account and allow sufficient time that the authorized access will not expire prior to the document being delivered.  (Allowance should also be made for a delay of 1-2 days in retrieval by the target system in the event of a plannned or unplanned system outage.)
 
 #### Initiating document generation/retrieval
 Once the necessary token has been retrieved by the OAuth process, the new payer system POSTs a [CDex CommunicationRequest](http://hl7.org/fhir/us/davinci-cdex/2019Jun/StructureDefinition-cdex-communicationrequest.html) to the original payer system.  It populates the [cdex-payload-clinical-note-type extension](http://hl7.org/fhir/us/davinci-cdex/2019Jun/StructureDefinition-cdex-communicationrequest-definitions.html#CommunicationRequest.payload.extension:payloadClinicalNoteType) with a code indicating the need for a [Coverage Transition document](#coverage-transition-document-structure).  (See [here](pcde-communicationrequest-example.html) for an example of the CommunicationRequest.)
@@ -113,18 +113,18 @@ For each active treatment the following three sub-sections are available:
 
 This mandatory section defines a single treatment.  The [CarePlan](profile-careplan.html) instance that is the entry will convey the following information:
 * What the treatment is (coded if possible, though text is permitted where a standardized procedure/medication/product code does not exist)
-* The condition that caused the need for treatment (coded as ICD-10 if possible)
+* The condition that caused the need for treatment (coded as ICD-10-CM if possible)
 * Any protocol being followed in the treatment (referenced by URL)
 
 ###### Prior Coverage
 This section will include the most recent relevant Claim(s) and/or Prior Authorization(s) associated with the treatment.  The purpose is to give a sense of how much of the treatments have been authorized, how many have already been performed/paid for, when the most recently billed occurrence was, etc.  Section narrative may provide additional detail.
 
-Prior Authorizations SHOULD comply with the [PAS Prior Authorization](http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claim.html) and [PAS Prior Authorization Response](http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claimresponse.html) profile.  As yet, there are no Da Vinci profiles available for Claim resources, so technically any FHIR-valid Claim and ClaimResponse resources though alignment with the PAS Prior Authorization profiles is recommended.  The [US Core DocumentReference](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-documentreference.html) profile can be used to convey PDF or other non-discrete representations if full FHIR-encoding is not possible.
+Prior Authorizations SHOULD comply with the [PAS Prior Authorization](http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claim.html) and [PAS Prior Authorization Response](http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claimresponse.html) profile.  As yet, there are no Da Vinci profiles available for Claim resources, so technically any FHIR-valid Claim and ClaimResponse resources are allowed, though alignment with the PAS Prior Authorization profiles is recommended.  The [US Core DocumentReference](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-documentreference.html) profile can be used to convey PDF or other non-discrete representations if full FHIR-encoding is not possible.
 
 ###### Supporting Information
 These sections provide additional information that supports the treatment decision.  Examples might include past treatments that had been tried and proved ineffective, lab results or other reports that support the decision to perform the treatment, clinical orders that support the treatment, etc.
 
-Each repetition must have one or more resource entries.  The section narrative SHALL provide a human description of the relevance of the contained resource entries.  Separate sections can be used to provide different groupings of resources that provide different types of support.  For example, one repetition might deal with prior therapy.  Another might contain the current order.  A third might indicate dispenses to date against that order
+Each repetition must have one or more resource entries.  The section narrative SHALL provide a human description of the relevance of the contained resource entries.  Separate sections can be used to provide different groupings of resources that provide different types of support.  For example, one repetition might deal with prior therapy.  Another might contain the current order.  A third might indicate dispenses to date against that order.
 
 ##### Other Documentation
 These sections allow conveying information that is not directly related to a current active therapy but which may be relevant to allowing the new payer to provide appropriate care.  For example, conveying that a patient has had a double-mastectomy in the past.  That may not be related to 'active therapy', but would still be relevant in terms of the new payer knowing not to send reminders for mamogram treatments.
