@@ -2,7 +2,7 @@
 	"package-id": "hl7.fhir.us.davinci-pcde",
 	"title": "Da Vinci Payer Coverage Decision Exchange (PCDE) FHIR IG",
 	"canonical": "http://hl7.org/fhir/us/davinci-pcde",
-	"introduction": "This implementation guide defines a mechanism for sharing information from an 'old' payer to a 'new' payer when a patient has switched plans to help ensure continuity of care and reduce/eliminate the need for repeating lab or diagnositic tests, re-trying previous therapies, etc.\r\n\r\nThe DaVinci PCDE IG is targeted to FHIR R4",
+	"introduction": "This implementation guide defines a mechanism for sharing information from an &#39;old&#39; payer to a &#39;new&#39; payer when a patient has switched plans to help ensure continuity of care and reduce/eliminate the need for repeating lab or diagnostic tests, re-trying previous therapies, etc.\r\n\r\nThe DaVinci PCDE IG is targeted to FHIR R4",
 	"list": [
 		{
 			"version": "current",
