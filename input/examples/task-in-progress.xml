@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <!-- Note: the id of this instance is different for publication reasons, but in practice, the id would be the same for all versions of the Task -->
+  <id value="in-progress"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2019-07-21T11:01:00+05:00"/>
+    <!-- This profile is declared here for validation reasons, but implementers should not count on a profile being declared in production instances -->
+    <profile value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-task-search"/>
+  </meta>
+  <status value="in-progress"/>
+  <businessStatus>
+    <text value="Should be finished on 2019-07-24"/>
+  </businessStatus>
+  <intent value="order"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+      <code value="pcde"/>
+      <display value="Coverage Transition Document"/>
+    </coding>
+  </code>
+<!--  <focus>
+    <type value="Coverage"/>
+    <identifier>
+      <system value="http://originalinsuranceinc.com/fhir/NamingSystem/certificate-ids"/>
+      <value value="12345"/>
+    </identifier>
+  </focus>-->
+  <for>
+    <identifier>
+      <system value="http://originalinsuranceinc.com/fhir/NamingSystem/client-ids"/>
+      <value value="444222222"/>
+    </identifier>
+  </for>
+  <requester>
+    <type value="Organization"/>
+    <display value="New Insurance Co Inc."/>
+  </requester>
+  <owner>
+    <type value="Organization"/>
+    <display value="Original Insurance Co Inc."/>
+  </owner>
+</Task>

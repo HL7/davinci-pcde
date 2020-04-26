@@ -7,5 +7,8 @@ ig-new.xml
 ig-validation-parameters.json
 output
 temp
+template
 /src-generated/org.hl7.fhir.igpublisher.jar
 /src-generated/org.hl7.fhir.publisher.jar
+~*.pptx
+/input-cache/org.hl7.fhir.publisher.jar

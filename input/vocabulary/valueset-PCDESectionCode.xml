@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="PCDESectionCode"/>
+  <url value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
+  <version value="0.0.0"/>
+  <name value="PCDEDocumentSectionCode"/>
+  <title value="PCDE Document Section Codes"/>
+  <status value="draft"/>
+  <date value="2018-03-13T08:16:34-07:00"/>
+  <description value="The codes for the different sections in a PCDE Document."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <immutable value="true"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+      <filter>
+        <property value="concept"/>
+        <op value="descendent-of"/>
+        <value value="_section"/>
+      </filter>
+    </include>
+  </compose>
+  <expansion>
+    <timestamp value="2020-04-25T14:48:03-07:00"/>
+    <contains>
+      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+      <code value="activeTreatment"/>
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+      <code value="treatment"/>
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+      <code value="priorCoverage"/>
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+      <code value="supportingInfo"/>
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+      <code value="otherDocumentation"/>
+    </contains>
+  </expansion>
+</ValueSet>

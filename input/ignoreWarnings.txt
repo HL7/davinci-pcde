@@ -1,0 +1,30 @@
+== Suppressed Messages ==
+
+# The following files don't yet exist at the target link, but they will
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html' for "PAS Profiles (0.1.0 - Sept 2019 ballot)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep' for "PAS (0.1.0 - Sept 2019 ballot)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html' for "Da Vinci Prior Authorization Support (PAS) (0.1.0 - Sept 2019 ballot)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep' for "Da Vinci Prior Authorization Support (PAS)" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep' for "Da Vinci PAS Sept 2019 ballot" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claim.html' for "PAS Prior Authorization" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/profile-claimresponse.html' for "PAS Prior Authorization Response" cannot be resolved
+
+# The following files exist
+The link 'http://hl7.org/fhir/us/davinci-pdex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-cdex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-hrex/2019Jun/full-ig.zip' for "2019Jul" cannot be resolved
+The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/full-ig.zip' for "2019Sep" cannot be resolved
+
+# We're not drawing from LOINC yet
+None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/doc-typecodes (http://hl7.org/fhir/ValueSet/doc-typecodes, and a code is recommended to come from this value set) (codes = http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEDocumentCode#pcde)
+
+# These are fake code systems, so inability to validate is expected
+INFORMATION: Bundle/document-example: Bundle.entry[4].resource.ofType(CarePlan).activity[0].detail.code.coding[0]: Code System URI "http://example.org/SERVICE_TYPE_CODE" is unknown so the code cannot be validated
+INFORMATION: Bundle/document-example: Bundle.entry[5].resource.ofType(Claim).type.coding[0]: Code System URI "http://example.org/UM_REQUEST_CATEGORY_CODE" is unknown so the code cannot be validated
+INFORMATION: Bundle/document-example: Bundle.entry[5].resource.ofType(Claim).priority.coding[0]: Code System URI "http://terminology/hl7.org/CodeSystem/processpriority" is unknown so the code cannot be validated
+INFORMATION: Bundle/document-example: Bundle.entry[8].resource.ofType(ServiceRequest).code.coding[0]: Code System URI "http://example.org/SERVICE_TYPE_CODE" is unknown so the code cannot be validated
+INFORMATION: Bundle/document-example: Bundle.entry[10].resource.ofType(PractitionerRole).code[0].coding[0]: Code System URI "http://example.org/ENTITY_IDENTIFIER_CODE" is unknown so the code cannot be validated
+
+# This info is for debugging and not relevant
+INFORMATION: Bundle/document-example: Bundle.entry[4].resource.ofType(CarePlan).activity[0].detail.reasonReference[0]: Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition
+INFORMATION: Bundle/document-example: Bundle.entry[5].resource.ofType(Claim).diagnosis[0].diagnosis.ofType(Reference): Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition

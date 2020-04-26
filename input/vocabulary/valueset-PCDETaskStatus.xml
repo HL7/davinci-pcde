@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="PCDETaskStatus"/>
+  <url value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDETaskStatus"/>
+  <version value="0.0.0"/>
+  <name value="PCDETaskStatus"/>
+  <title value="PCDE Task Status"/>
+  <status value="draft"/>
+  <date value="2018-03-13T08:16:34-07:00"/>
+  <description value="The set of task codes allowed for use in PCDE tasks"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <immutable value="true"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/task-status"/>
+      <concept>
+        <code value="requested"/>
+      </concept>
+      <concept>
+        <code value="in-progress"/>
+      </concept>
+      <concept>
+        <code value="failed"/>
+      </concept>
+      <concept>
+        <code value="completed"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>
