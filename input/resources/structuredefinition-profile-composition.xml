@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="profile-composition"/>
+  <url value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition"/>
+  <name value="PCDEComposition"/>
+  <status value="active"/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Composition"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Composition">
+      <path value="Composition"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Composition.status">
+      <path value="Composition.status"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <fixedCode value="final"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.type">
+      <path value="Composition.type"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+          <code value="pcde"/>
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.date">
+      <path value="Composition.date"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.author">
+      <path value="Composition.author"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.title">
+      <path value="Composition.title"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.event">
+      <path value="Composition.event"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.event.detail">
+      <path value="Composition.event.detail"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section">
+      <path value="Composition.section"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="code"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment">
+      <path value="Composition.section"/>
+      <sliceName value="ActiveTreatment"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+          <code value="activeTreatment"/>
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true"/>
+      <binding>
+        <strength value="required"/>
+        <description value="Codes for PCDE Sections"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
+      </binding>
+    </element>
+    <element id="Composition.section:ActiveTreatment.text">
+      <path value="Composition.section.text"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.entry">
+      <path value="Composition.section.entry"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section">
+      <path value="Composition.section.section"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="code"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <min value="1"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:Treatment">
+      <path value="Composition.section.section"/>
+      <sliceName value="Treatment"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:Treatment.code">
+      <path value="Composition.section.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+          <code value="treatment"/>
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true"/>
+      <binding>
+        <strength value="required"/>
+        <description value="Codes for PCDE Sections"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
+      </binding>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:Treatment.text">
+      <path value="Composition.section.section.text"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:Treatment.entry">
+      <path value="Composition.section.section.entry"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-careplan"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:Treatment.section">
+      <path value="Composition.section.section.section"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:PriorCoverage">
+      <path value="Composition.section.section"/>
+      <sliceName value="PriorCoverage"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:PriorCoverage.code">
+      <path value="Composition.section.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+          <code value="priorCoverage"/>
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true"/>
+      <binding>
+        <strength value="required"/>
+        <description value="Codes for PCDE Sections"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
+      </binding>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:PriorCoverage.text">
+      <path value="Composition.section.section.text"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:PriorCoverage.entry">
+      <path value="Composition.section.section.entry"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim"/>
+        <targetProfile value="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claimresponse"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:PriorCoverage.section">
+      <path value="Composition.section.section.section"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:SupportingInformation">
+      <path value="Composition.section.section"/>
+      <sliceName value="SupportingInformation"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:SupportingInformation.code">
+      <path value="Composition.section.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+          <code value="supportingInfo"/>
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true"/>
+      <binding>
+        <strength value="required"/>
+        <description value="Codes for PCDE Sections"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
+      </binding>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:SupportingInformation.text">
+      <path value="Composition.section.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:SupportingInformation.entry">
+      <path value="Composition.section.section.entry"/>
+      <min value="1"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:ActiveTreatment.section:SupportingInformation.section">
+      <path value="Composition.section.section.section"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Composition.section:OtherDocumentation">
+      <path value="Composition.section"/>
+      <sliceName value="OtherDocumentation"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:OtherDocumentation.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+          <code value="otherDocumentation"/>
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true"/>
+      <binding>
+        <strength value="required"/>
+        <description value="Codes for PCDE Sections"/>
+        <valueSet value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
+      </binding>
+    </element>
+    <element id="Composition.section:OtherDocumentation.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:OtherDocumentation.entry">
+      <path value="Composition.section.entry"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Composition.section:OtherDocumentation.section">
+      <path value="Composition.section.section"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+  </differential>
+</StructureDefinition>

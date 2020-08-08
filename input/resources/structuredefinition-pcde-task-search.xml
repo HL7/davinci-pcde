@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="pcde-task-search"/>
+	<url value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search"/>
+	<name value="PCDETaskSearch"/>
+	<title value="PCDE Coverage Transition Task - Search Profile"/>
+	<status value="active"/>
+	<experimental value="false"/>
+	<description value="Constraints on Task when polling / searching for completed Coverage Transition Documentation"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Task"/>
+	<baseDefinition value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Task">
+			<path value="Task"/>
+			<definition value="Constraints on Task when polling / searching for completed Coverage Transition Documentation"/>
+    </element>
+    <element id="Task.status">
+      <path value="Task.status"/>
+    </element>
+		<element id="Task.requester">
+			<path value="Task.requester"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+			</type>
+		</element>
+		<element id="Task.owner">
+			<path value="Task.owner"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+			</type>
+		</element>
+		<element id="Task.input:query">
+      <path value="Task.input"/>
+      <sliceName value="query"/>
+      <max value="0"/>
+    </element>
+		<element id="Task.input:code">
+      <path value="Task.input"/>
+      <sliceName value="code"/>
+      <min value="1"/>
+    </element>
+		<element id="Task.input:code.value[x]">
+      <path value="Task.input.value[x]"/>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+          <code value="pcde"/>
+        </coding>
+      </patternCodeableConcept>
+    </element>
+	</differential>
+</StructureDefinition>

@@ -2,18 +2,10 @@
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="PCDESectionCode"/>
   <url value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDESectionCode"/>
-  <version value="0.0.0"/>
   <name value="PCDEDocumentSectionCode"/>
   <title value="PCDE Document Section Codes"/>
   <status value="draft"/>
-  <date value="2018-03-13T08:16:34-07:00"/>
   <description value="The codes for the different sections in a PCDE Document."/>
-  <jurisdiction>
-    <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-    </coding>
-  </jurisdiction>
   <immutable value="true"/>
   <compose>
     <include>
@@ -25,7 +17,7 @@
       </filter>
     </include>
   </compose>
-  <expansion>
+<!--  <expansion>
     <timestamp value="2020-04-25T14:48:03-07:00"/>
     <contains>
       <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
@@ -47,5 +39,5 @@
       <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
       <code value="otherDocumentation"/>
     </contains>
-  </expansion>
+  </expansion>-->
 </ValueSet>

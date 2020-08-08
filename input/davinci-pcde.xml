@@ -23,134 +23,33 @@
   </jurisdiction>
   <packageId value="hl7.fhir.us.davinci-pcde"/>
   <fhirVersion value="4.0.1"/>
-  <dependsOn>
+  <dependsOn id="uscore">
     <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
 <!--    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core-3.1.0"/>-->
     <packageId value="hl7.fhir.us.core"/>
     <version value="3.1.0"/>
   </dependsOn>
-  <dependsOn>
+  <dependsOn id="pdex">
     <uri value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
     <packageId value="hl7.fhir.us.davinci-pdex"/>
     <version value="0.1.0"/>
   </dependsOn>
-  <dependsOn>
+  <dependsOn id="cdex">
     <uri value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <packageId value="hl7.fhir.us.davinci-cdex"/>
     <version value="0.1.0"/>
   </dependsOn>
-  <dependsOn>
+  <dependsOn id="hrex">
     <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
     <packageId value="hl7.fhir.us.davinci-hrex"/>
-    <version value="0.1.0"/>
+    <version value="current"/>
   </dependsOn>
-  <dependsOn>
+  <dependsOn id="pas">
     <uri value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"/>
     <packageId value="hl7.fhir.us.davinci-pas"/>
     <version value="0.1.0"/>
   </dependsOn>
   <definition>
-    <!-- Note: Order of these spreadsheets matters -->
-    <!-- <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="bundle-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="composition-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="careplan-profile-spreadsheet.xml"/>
-    </extension> -->
-    <grouping id="operations">
-      <name value="Operations"/>
-      <description value="Operations to be supported by EMRs and payor systems conforming to this implementation guide"/>
-    </grouping>
-    <grouping id="profiles">
-      <name value="Profiles"/>
-      <description value="Profiles to be supported by EMRs and payor systems conforming to this implementation guide"/>
-    </grouping>
-    <grouping id="extensions">
-      <name value="Extensions"/>
-      <description value="Extensions defined as part of this implementation guide"/>
-    </grouping>
-    <grouping id="terminology">
-      <name value="Terminology"/>
-      <description value="Value Sets and/or code systems defined as part of this implementation guide"/>
-    </grouping>
-    <grouping id="examples">
-      <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the PCDE profiles"/>
-    </grouping>
-
-	<!-- Profiles -->
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/profile-pcde-bundle"/>
-      </reference>
-      <name value="PCDE Bundle"/>
-      <description value="PCDE constraints on Bundle to define the Coverage Transition Document bundle"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/profile-careplan"/>
-      </reference>
-      <name value="PCDE CarePlan"/>
-      <description value="PCDE constraints on CarePlan to define the details of active treatments"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/profile-composition"/>
-      </reference>
-      <name value="PCDE Composition"/>
-      <description value="PCDE constraints on Composition to define the structure of the data exchange"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/profile-task-request"/>
-      </reference>
-      <name value="PCDE Coverage Transition Task - Request"/>
-      <description value="PCDE constraints on Task when posting request"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/profile-task-search"/>
-      </reference>
-      <name value="PCDE Coverage Transition Task - Search"/>
-      <description value="PCDE constraints on Task when getting update"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="profiles"/>
-    </resource>
-	<!-- Terminology -->
-    <resource>
-      <reference>
-        <reference value="CodeSystem/PCDEtempCodes"/>
-      </reference>
-      <exampleBoolean value="false"/>
-      <groupingId value="terminology"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/PCDESectionCode"/>
-      </reference>
-      <exampleBoolean value="false"/>
-      <groupingId value="terminology"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/PCDETaskStatus"/>
-      </reference>
-      <exampleBoolean value="false"/>
-      <groupingId value="terminology"/>
-    </resource>
-
-	<!-- Examples -->
     <resource>
       <reference>
         <reference value="Bundle/pcde-document"/>
@@ -158,7 +57,6 @@
       <name value="PCDE Document example"/>
       <description value="Example of a Coverage Exchange document"/>
       <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-pcde-bundle"/>
-      <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
@@ -166,8 +64,7 @@
       </reference>
       <name value="PCDE Coverage Transition Task Request Example"/>
       <description value="Example of a requested Task for a Coverage Exchange document"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-task-request"/>
-      <groupingId value="examples"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-request"/>
     </resource>
     <resource>
       <reference>
@@ -175,8 +72,7 @@
       </reference>
       <name value="PCDE Coverage Transition In Progress Task Search Example"/>
       <description value="Example of an in-progress Task as returned"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-task-search"/>
-      <groupingId value="examples"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search"/>
     </resource>
     <resource>
       <reference>
@@ -184,8 +80,7 @@
       </reference>
       <name value="PCDE Coverage Transition Completed Task Search Example"/>
       <description value="Example of a completed Task with reference to a Coverage Exchange document"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-task-search"/>
-      <groupingId value="examples"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search"/>
     </resource>
     <resource>
       <reference>
@@ -193,8 +88,7 @@
       </reference>
       <name value="PCDE Coverage Transition Failed Task Search Example"/>
       <description value="Example of a completed Task with reference to a Coverage Exchange document"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-task-search"/>
-      <groupingId value="examples"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search"/>
     </resource>
 
     <page>

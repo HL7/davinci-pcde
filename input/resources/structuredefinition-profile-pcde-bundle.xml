@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="profile-pcde-bundle"/>
+  <url value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-pcde-bundle"/>
+  <version value="0.4.1"/>
+  <name value="PCDEBundle"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Bundle"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Bundle">
+      <path value="Bundle"/>
+      <constraint>
+        <key value="pcde-bdl-1"/>
+        <severity value="error"/>
+        <human value="First entry must be a valid PCDE Composition"/>
+        <expression value="entry.first().resource.conformsTo('http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition')"/>
+        <xpath value="f:entry[1]/f:resource/f:Composition"/>
+      </constraint>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <fixedCode value="document"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry.fullUrl">
+      <path value="Bundle.entry.fullUrl"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry.resource">
+      <path value="Bundle.entry.resource"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry.search">
+      <path value="Bundle.entry.search"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Bundle.entry.request">
+      <path value="Bundle.entry.request"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Bundle.entry.response">
+      <path value="Bundle.entry.response"/>
+      <min value="0"/>
+      <max value="0"/>
+      <mustSupport value="false"/>
+    </element>
+  </differential>
+</StructureDefinition>

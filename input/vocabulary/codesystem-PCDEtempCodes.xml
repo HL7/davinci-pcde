@@ -5,34 +5,13 @@
 	<name value="PCDETempCodes"/>
 	<title value="PCDE Temporary Codes"/>
 	<status value="draft"/>
-	<experimental value="false"/>
-	<date value="2018-03-13T08:16:34-07:00"/>
-	<contact>
-		<telecom>
-			<system value="url"/>
-		</telecom>
-		<telecom>
-			<system value="email"/>
-		</telecom>
-	</contact>
 	<description value="Temporary codes defined for use in the PCDE specification.  These codes will be replaced by official HL7, LOINC and/or other codes in a future release once implementer experience has confirmed requirements."/>
-	<jurisdiction>
-		<coding>
-			<system value="urn:iso:std:iso:3166"/>
-			<code value="US"/>
-		</coding>
-	</jurisdiction>
 	<caseSensitive value="true"/>
 	<content value="complete"/>
 	<concept>
 		<code value="pcde"/>
 		<display value="Coverage Transition Document"/>
 		<definition value="A document that details information related to transitioning coverage from one payor to another."/>
-	</concept>
-	<concept>
-		<code value="document"/>
-		<display value="Requested document"/>
-		<definition value="A code for a task output that contains a requested document"/>
 	</concept>
 	<concept>
     <code value="_sections"/>

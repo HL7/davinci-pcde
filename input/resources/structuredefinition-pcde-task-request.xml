@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<id value="pcde-task-request"/>
+	<url value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-request"/>
+	<name value="PCDETaskRequest"/>
+	<title value="PCDE Coverage Transition Task - Request Profile"/>
+	<status value="active"/>
+	<experimental value="false"/>
+	<description value="Constraints on Task when requesting a Coverage Transition Document"/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Task"/>
+	<baseDefinition value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Task">
+			<path value="Task"/>
+			<definition value="Constraints on Task when requesting a Coverage Transition Document"/>
+    </element>
+		<element id="Task.status">
+			<path value="Task.status"/>
+			<fixedCode value="requested"/>
+		</element>
+		<element id="Task.statusReason">
+			<path value="Task.statusReason"/>
+			<max value="0"/>
+		</element>
+		<element id="Task.businessStatus">
+			<path value="Task.businessStatus"/>
+			<max value="0"/>
+		</element>
+		<element id="Task.output">
+      <path value="Task.output"/>
+      <max value="0"/>
+    </element>
+	</differential>
+</StructureDefinition>

@@ -6,18 +6,10 @@
   <intent value="order"/>
   <code>
     <coding>
-      <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
-      <code value="pcde"/>
-      <display value="Coverage Transition Document"/>
+      <system value="http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"/>
+      <code value="data-request"/>
     </coding>
   </code>
-<!--  <focus>
-    <type value="Coverage"/>
-    <identifier>
-      <system value="http://originalinsuranceinc.com/fhir/NamingSystem/certificate-ids"/>
-      <value value="12345"/>
-    </identifier>
-  </focus>-->
   <for>
     <type value="Patient"/>
     <identifier>
@@ -25,6 +17,7 @@
       <value value="444222222"/>
     </identifier>
   </for>
+  <authoredOn value="2020-07-30T20:07:15-06:00"/>
   <requester>
     <!-- Todo: Need to determine identification convention for payer organizations -->
     <type value="Organization"/>
@@ -35,4 +28,19 @@
     <type value="Organization"/>
     <display value="Original Insurance Co Inc."/>
   </owner>
+  <input>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"/>
+        <code value="data-code"/>
+      </coding>
+    </type>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
+        <code value="pcde"/>
+        <display value="Coverage Transition Document"/>
+      </coding>
+    </valueCodeableConcept>
+  </input>
 </Task>
