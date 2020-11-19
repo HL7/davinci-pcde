@@ -1,8 +1,8 @@
 ### Da Vinci
-Da Vinci is an industry sponsored project that brings together the U.S. EHR vendor and Payer communities to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its member and the community as a whole.
+Da Vinci is an HL7-sponsored project that brings together the U.S. payer ,providers, and technology suppliers (including EHR vendors)  to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its member and the community as a whole.
 
-The process that Da Vinci has adopted includes:
-1. identify business, clinical, technical and testing requirements,
+The process that Da Vinci has adopted includes: 
+1. identify business, clinical, technical and testing requirements, 
 2. develop and ballot a FHIR based implementation guide (IG),
 3. develop a reference implementation (RI) that is used to demonstrate that the concepts in the IG are possible to implement,
 4. pilot the standard
