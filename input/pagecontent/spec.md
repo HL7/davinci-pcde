@@ -131,7 +131,7 @@ An example of a Coverage Transition document can be found [here](Bundle-pcde-doc
 There are two major sections to a Coverage Transition Document: [Active Treatments](#active-treatment) and [Other Documentation](#other-documentation)
 
 ##### Active Treatment
-This section should repeat for each "active treatment" the patient is receiving under coverage from the original payer at the time the document is prepared.  Active treatments might include:
+This section should repeat for each "active treatment" the patient is receiving under coverage from the original payer at the time the document is prepared.  Active treatments include any treatment that, to the best of the payer's knowledge, is ongoing and for which the new payer might reasonably expect prior authorizations or claims, such as:
 * medications
 * procedures
 * medical equipment
