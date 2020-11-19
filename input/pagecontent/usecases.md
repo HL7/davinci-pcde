@@ -2,7 +2,7 @@
 Patients that move from one payer to another frequently experience interruptions or delays to existing care for chronic and acute conditions related to the inability of the new payer to obtain information about the ongoing treatment, understand its progress and verify the clinical need for such treatments.  This frequently requires the patient or providers to change therapies, tolerate delays in care, see additional providers or schedule additional visits, and fill out or resubmit additional documentation showing that the care is medically necessary and appropriate. The process creates a significant burden on providers, add unnecessary costs, and introduces risk to the patient.
 
 ### Background
-The Healthcare industry in the US has recognized the need to support, where possible, continuity of care for both chronic and acute problems for individuals that move from one payer to another. The CMS NPRM on interoperability published in the Federal Register on March 3, 2019, requires that providers enable members to exchange clinical information from a prior payer to the current payer for a period of 5 years after they leave a plan and move to another covered plan. The exchange of information is intended, as indicated in the preamble to the NPRM, to enable continuity of care as a member moves from one covered plan to another without:
+The Healthcare industry in the US has recognized the need to support, where possible, continuity of care for both chronic and acute problems for individuals that move from one payer to another. The CMS NPRM on interoperability published in the Federal Register on March 3, 2019, requires that payers enable members to exchange clinical information from a prior payer to the current payer for a period of 5 years after they leave a plan and move to another covered plan. The exchange of information is intended, as indicated in the preamble to the NPRM, to enable continuity of care as a member moves from one covered plan to another without:
 1. forcing the member to pay for the care unless required as part of the change in plan coverage
 2. have care terminated,  or
 3. requiring providers to submit additional documentation to the new plan that was already available to the prior plan.
@@ -21,7 +21,7 @@ This implementation guide is not:
 4. intended to fully automate the review and authorization process for continuity of care for the new payer for current treatments
 
 ### Business Requirements
-The goal of this implementation guide guide is complementary to the payer data exchange implementation guide (PDex) and is focused on providing a framework in which a payer can indicate:
+The goal of this implementation guide is complementary to the payer data exchange implementation guide (PDex) and is focused on providing a framework in which a payer can indicate:
 
 1. current care that a member is receiving,
 2. conditions that led to the need for the current care,
