@@ -33,20 +33,22 @@ The full set of profiles defined in or used by this implementation guide can be 
 This IG defines custom codes for document types and sections.  Implementers **SHALL** consider the codes 'temporary'.  After implementation testing and confirmation, these custom codes will migrate to standardized codes in an official code system - most likely LOINC.
 
 ### Data Exchange
-This data exchange builds on the Da Vinci [Payer Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun) and [Clinical Data Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex/2019Jun) implementation guides, leveraging the [OAuth 2.0-based](http://hl7.org/fhir/us/davinci-pdex/2019Jun/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [non-Task Solicited Communication](http://hl7.org/fhir/us/davinci-cdex/2019Jun/Request_(Solicited_Communication).html#solicited-communication-without-task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
-
+This data exchange builds on the Da Vinci [Payer Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun/), [Clinical Data Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex/2019Jun/) and [Payer Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex), and [Health Record Exchange](http://hl7.org/fhir/us/davinci-hrex/2020Sep/) implementation guides, leveraging the [OAuth 2.0-based](http://hl7.org/fhir/us/davinci-pdex/2019Jun/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [non-Task Solicited Communication](http://hl7.org/fhir/us/davinci-cdex/2019Jun/Request_(Solicited_Communication).html#solicited-communication-without-task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
 
 #### Pre-conditions
 For this implementation guide to be applicable, the following conditions must be met:
 
-* A member of a covered plan has enrolled in another covered plan offered by another payer.
+* A member of a covered plan has enrolled in another covered plan offered by another payer
 
 * That member is currently being treated for some chronic or acute condition and wishes the treatment to continue
 
 * The new payer has performed a patient / coverage resolution process and has information about relevant prior coverage
 
-* The new payer system knows the base FHIR API URL for (and has basic business arrangements in place allowing query of data from) the original payer
+* Both the new payer and the old payer must be able to recognize the each other based on an agreed payer identifier scheme
 
+* The new payer system knows the base FHIR API URL for the original payer endpoint and has basic business arrangements in place allowing query of data from it
+
+NOTE: Work to standardize how payer identification will be managed, as well as how the FHIR endpoint for a given payer will be found (i.e. through the use of a registry) is ongoing.  For now, this is left to site-to-site negotiation.
 
 #### Workflow
 1. The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
@@ -165,8 +167,10 @@ These sections allow conveying information that is not directly related to a cur
 Multiple sections are allowed so that separate narratives can be used to group resources that are related together.  Narrative-only sections can be used to convey information for which no discrete data exists or is relevant.
 
 #### Additional Notes
-1. At the moment, this IG is quite flexible with how information is encoded.  Future versions of this IG will likely impose additional expectations, at least for certain types of conditions/therapies, as it becomes more obvious where additional interoperability requirements can result in less manual effort/reduced time in processing transitions in coverage.
+1.  The exchanges covered by this implementation guide are subject to appropriate regulation regarding operations and consent, including HIPAA and 42CFR Part II privacy standards. The entities participating in these exchanges should be familiar with and adhere to these and other relevant regulatory requirements.
 
-2. The US Core profiles impose terminology expectations that reflect commonly used clinical terminologies.  These may not always align with commonly used billing codes.  While billing codes may be sent as well (as additional translations), payers SHALL translate to the appropriate clinical terminology (e.g. SNOMED CT) in order to comply with the US Core profiles if an appropriate code exists in the US Core value set.
+2. At the moment, this IG is quite flexible with how information is encoded.  Future versions of this IG will likely impose additional expectations, at least for certain types of conditions/therapies, as it becomes more obvious where additional interoperability requirements can result in less manual effort/reduced time in processing transitions in coverage.
 
-3. The Coverage Transition document structure is open-ended.  Additional sections and sub-sections are permitted and additional data elements (including extensions) are permitted as part of the document instance.  Additional elements should never be used in place of 'standard' elements, but can be sent in addition to provide additional context to systems that understand the additional discrete data.  All important information should be reflected in the resource narrative (text) elements and/or in the section.text elements.
+3. The US Core profiles impose terminology expectations that reflect commonly used clinical terminologies.  These may not always align with commonly used billing codes.  While billing codes may be sent as well (as additional translations), payers SHALL translate to the appropriate clinical terminology (e.g. SNOMED CT) in order to comply with the US Core profiles if an appropriate code exists in the US Core value set.
+
+4. The Coverage Transition document structure is open-ended.  Additional sections and sub-sections are permitted and additional data elements (including extensions) are permitted as part of the document instance.  Additional elements should never be used in place of 'standard' elements, but can be sent in addition to provide additional context to systems that understand the additional discrete data.  All important information should be reflected in the resource narrative (text) elements and/or in the section.text elements.

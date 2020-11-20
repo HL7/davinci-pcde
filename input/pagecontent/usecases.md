@@ -21,7 +21,7 @@ This implementation guide is not:
 4. intended to fully automate the review and authorization process for continuity of care for the new payer for current treatments
 
 ### Business Requirements
-The goal of this implementation guide is complementary to the payer data exchange implementation guide (PDex) and is focused on providing a framework in which a payer can indicate:
+The goal of this implementation guide is to complement the payer data exchange implementation guide (PDex) by providing a framework in which a payer can indicate:
 
 1. active treatment plans that a member is receiving,
 2. conditions that led to the need for the active treatment plans,
