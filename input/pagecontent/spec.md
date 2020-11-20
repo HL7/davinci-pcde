@@ -39,7 +39,7 @@ This data exchange builds on the Da Vinci [Payer Data Exchange (PDex)](http://hl
 #### Pre-conditions
 For this implementation guide to be applicable, the following conditions must be met:
 
-* A member of a covered plan has moved to another covered plan offered by another payer.
+* A member of a covered plan has enrolled in another covered plan offered by another payer.
 
 * That member is currently being treated for some chronic or acute condition and wishes the treatment to continue
 
