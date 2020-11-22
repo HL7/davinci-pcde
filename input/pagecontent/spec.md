@@ -54,11 +54,11 @@ NOTE: Work to standardize how payer identification will be managed, as well as h
 This implementation guide inherits all of the requirements and guidance defined in the [HRex Security and Privacy page]({{site.data.fhir.ver.hrex}}/security.html).  Conformant systems must familiarize themselves with and abide by the expectations established there for all functions enabled by this implementation guide.
 
 #### Workflow
-1. Optional: The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
+1. The new payer executes a [Member Match]({{site.data.fhir.ver.pdex}}/OperationDefinition-member-match.html) operation using the member's old insurance information and demographics to determine the patient identifier on the original payer's system.
 
-2. The new payer executes a [Member Match]({{site.data.fhir.ver.pdex}}/OperationDefinition-member-match.html) operation using the member's old insurance information and demographics to determine the patient identifier on the original payer's system.
+2. Optional: The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
 
-3. The new payer's system (possibly using the token provided in #1) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](todo) on the old payers system, requesting notifications about updates to the newly created Task
+3. The new payer's system (possibly using the token provided in #2) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](#subscription) on the old payers system, requesting notifications about updates to the newly created Task
 
 4. The original payer either locates an existing document (previously prepared) or assembles the information needed and creates the requested document.  Updates are made to the `Task.status` element and, optionally, human-readable status information within `Task.businessStatus.text` element as the task progresses through different [states](https://www.hl7.org/fhir/task.html#statemachine).  (In PCDE, the Task is limited to the states 'requested', 'in-progress', 'completed' or 'failed'.)  The payer updates `Task.output` with a reference to the document when `Task.status` is completed.
 
@@ -89,6 +89,9 @@ In many cases, manual work will be required by payer staff to create a requested
 Once the necessary token has been retrieved through the OAuth process, the new payer system will POST a [PCDE Task](StructureDefinition-pcde-task-request.html) request to the original payer system.  The requester **SHALL** populate the `Task.code` and `Task.status` to indicate that a [Coverage Transition document](#coverage-transition-document-structure) is requested.  (See [here](Task-requested.html) for an example of a requested Task.)
 
 If the receiving system does not recognize the member identified in Task.for or there are other structural issues with that Task (e.g. requesting payer is not recognized, Task doesn't comply with profile, etc.), then the original payer SHALL respond with an appropriate 4xx or 5xx HTTP error accompanied by an [OperationOutcome]({{site.data.fhir.path}}operationoutcome.html) conveying the reason for failure.
+
+#### Subscription
+Payers **MAY** support [subscriptions]({{site.data.fhir.ver.hrex}}/exchanging-subscription.html) to allow monitoring of changes to the Task resource rather than relying on [polling]({{site.data.fhir.ver.hrex}}/exchanging-polling.html).  Payers making use of subscription SHOULD comply with the [Subscription Backport IG]({{site.data.fhir.ver.subscription}}) which allows pre-adoption of R5 subscription mechanisms in R4-conformant systems.
 
 #### Tracking Status
 While fulfilling the request, the original payer **MAY** update `Task.status` or `Task.businessStatus.text` to reflect interim status information.  (For example, indicating that the task is in-progress with a date when the document is expected to be ready.)  An example can be seen [here](Task-in-progress.html).

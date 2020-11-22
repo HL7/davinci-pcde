@@ -34,10 +34,10 @@
     <packageId value="hl7.fhir.us.davinci-pdex"/>
     <version value="0.1.0"/>
   </dependsOn>
-  <dependsOn id="cdex">
-    <uri value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
-    <packageId value="hl7.fhir.us.davinci-cdex"/>
-    <version value="0.1.0"/>
+  <dependsOn id="subscription">
+    <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>
+    <packageId value="hl7.fhir.uv.subscriptions-backport"/>
+    <version value="current"/>
   </dependsOn>
   <dependsOn id="hrex">
     <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
