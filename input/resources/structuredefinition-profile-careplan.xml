@@ -61,6 +61,13 @@
 		</element>
 		<element id="CarePlan.activity.detail.reasonReference">
 			<path value="CarePlan.activity.detail.reasonReference"/>
+			<type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+        <targetProfile value="http://hl7.org/fhir/observation"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"/>
+      </type>
 			<mustSupport value="true"/>
 		</element>
 		<element id="CarePlan.activity.detail.status">

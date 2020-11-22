@@ -52,6 +52,13 @@
 		</element>
 		<element id="Composition.author">
 			<path value="Composition.author"/>
+			<type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-device"/>
+      </type>
 			<mustSupport value="true"/>
 		</element>
 		<element id="Composition.title">
@@ -236,7 +243,7 @@
 				<code value="Reference"/>
 				<targetProfile value="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim"/>
 				<targetProfile value="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claimresponse"/>
-				<targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"/>
 			</type>
 			<mustSupport value="true"/>
 		</element>
