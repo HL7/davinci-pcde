@@ -85,6 +85,8 @@ In many cases, manual work will be required by payer staff to create a requested
 #### Initiating document generation/retrieval
 Once the necessary token has been retrieved through the OAuth process, the new payer system will POST a [PCDE Task](StructureDefinition-pcde-task-request.html) request to the original payer system.  The requester **SHALL** populate the `Task.code` and `Task.status` to indicate that a [Coverage Transition document](#coverage-transition-document-structure) is requested.  (See [here](Task-requested.html) for an example of a requested Task.)
 
+If the receiving system does not recognize the member identified in Task.for or there are other structural issues with that Task (e.g. requesting payer is not recognized, Task doesn't comply with profile, etc.), then the original payer SHALL respond with an appropriate 4xx or 5xx HTTP error accompanied by an [OperationOutcome]({{site.data.fhir.path}}operationoutcome.html) conveying the reason for failure.
+
 #### Tracking Status
 While fulfilling the request, the original payer **MAY** update `Task.status` or `Task.businessStatus.text` to reflect interim status information.  (For example, indicating that the task is in-progress with a date when the document is expected to be ready.)  An example can be seen [here](Task-in-progress.html).
 
@@ -111,6 +113,7 @@ When the document is available, original payer **SHALL** update `Task.status` to
 When the `Task.status` is `completed`, the Task will have an output element with the name 'document' that is a reference to the requested coverage transition document.  On retrieving the Task and finding it in completed state, the new payer **SHALL** perform a 'read' on the specified URL for the document referenced in the `Task.output` element for the newly created document, again using the previously supplied token.  The new payer can then process the document contents as necessry to ensure a smooth transition of care.
 
 NOTES:
+
 * This specification does not, itself, impose any expectation on the duration of records retention after a patient's coverage ceases, only that the payer expose all relevant information it still retains. If no details are retained, but the payer still recognizes the patient, the Task should be changed to a status of 'Failed' with a Task.statusReason indicating that no records remain to be shared.
 
 * The original payer **SHALL** make the Task resource and associated document available for a minimum of 7 days after transitioning to complete, or for at least 24 hours after a successful response is returned to a 'read' attempt by the new payer, whichever is less.  This ensures the new payer has an opportunity to re-query the document if an issue occurs during the original read.
