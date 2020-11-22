@@ -162,6 +162,8 @@ These sections provide additional information that supports the treatment decisi
 
 Each repetition must have one or more resource entries.  The section narrative SHALL provide a human description of the relevance of the contained resource entries.  Separate sections can be used to provide different groupings of resources that provide different types of support.  For example, one repetition might deal with prior therapy.  Another might contain the current order.  A third might indicate dispenses to date against that order.
 
+When interpreting information shared in a coverage transfer document, it is often helpful to understand the source and history of the information being shared.  This also allows the receiving payer to better reconcile the shared information with data shared from other sources.  For this reason, resources shared as 'supporting' information SHOULD be accompanied by Provenance instances complying with the [PDex Provenance profile]({{site.data.fhir.ver.pdex}}/StructureDefinition-pdex-provenance.html) as additional 'supporting information' entries.
+
 ##### Other Documentation
 These sections allow conveying information that is not directly related to a current active therapy but which may be relevant to allowing the new payer to provide appropriate care.  For example, conveying that a patient has had a double-mastectomy in the past.  That may not be related to 'active therapy', but would still be relevant in terms of the new payer knowing not to send reminders for mamogram treatments.
 
