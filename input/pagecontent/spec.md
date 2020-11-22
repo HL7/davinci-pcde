@@ -51,15 +51,17 @@ For this implementation guide to be applicable, the following conditions must be
 NOTE: Work to standardize how payer identification will be managed, as well as how the FHIR endpoint for a given payer will be found (e.g. through the use of a registry) is ongoing.  For now, this is left to site-to-site negotiation.
 
 #### Workflow
-1. The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
+1. Optional: The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
 
-2. Using the token, the new payer's system requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](todo) on the old payers system, requesting notifications about updates to the newly created Task
+2. The new payer executes a [Member Match]({{site.data.fhir.ver.pdex}}/OperationDefinition-member-match.html) operation using the member's old insurance information and demographics to determine the patient identifier on the original payer's system.
 
-3. The original payer either locates an existing document (previously prepared) or assembles the information needed and creates the requested document.  Updates are made to the `Task.status` element and, optionally, human-readable status information within `Task.businessStatus.text` element as the task progresses through different [states](https://www.hl7.org/fhir/task.html#statemachine).  (In PCDE, the Task is limited to the states 'requested', 'in-progress', 'completed' or 'failed'.)  The payer updates `Task.output` with a reference to the document when `Task.status` is completed.
+3. The new payer's system (possibly using the token provided in #1) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](todo) on the old payers system, requesting notifications about updates to the newly created Task
 
-4. The new payer queries the origninal payer's system for updates to the Task.  This is either done by polling at regular intervals or by responding to a Subscription notification.  When the `Task.status` is completed, the new payer retrieves the [Coverage Transition Document](#coverage-transition-document-structure) pointed to by the `Task.output`.
+4. The original payer either locates an existing document (previously prepared) or assembles the information needed and creates the requested document.  Updates are made to the `Task.status` element and, optionally, human-readable status information within `Task.businessStatus.text` element as the task progresses through different [states](https://www.hl7.org/fhir/task.html#statemachine).  (In PCDE, the Task is limited to the states 'requested', 'in-progress', 'completed' or 'failed'.)  The payer updates `Task.output` with a reference to the document when `Task.status` is completed.
 
-5. The new payer incorporates the information in the document into their utilization management / utilization review process for review and approval of the ongoing treatments for the new member.
+5. The new payer queries the origninal payer's system for updates to the Task.  This is either done by polling at regular intervals or by responding to a Subscription notification.  When the `Task.status` is completed, the new payer retrieves the [Coverage Transition Document](#coverage-transition-document-structure) pointed to by the `Task.output`.
+
+6. The new payer incorporates the information in the document into their utilization management / utilization review process for review and approval of the ongoing treatments for the new member.
 
 The following diagram illustrates the workflow that is supported by this implementation guide:
 
@@ -108,7 +110,9 @@ When the document is available, original payer **SHALL** update `Task.status` to
 #### Retrieving the document
 When the `Task.status` is `completed`, the Task will have an output element with the name 'document' that is a reference to the requested coverage transition document.  On retrieving the Task and finding it in completed state, the new payer **SHALL** perform a 'read' on the specified URL for the document referenced in the `Task.output` element for the newly created document, again using the previously supplied token.  The new payer can then process the document contents as necessry to ensure a smooth transition of care.
 
-NOTE:
+NOTES:
+* This specification does not, itself, impose any expectation on the duration of records retention after a patient's coverage ceases, only that the payer expose all relevant information it still retains. If no details are retained, but the payer still recognizes the patient, the Task should be changed to a status of 'Refused' with a Task.statusReason indicating that no records remain to be shared.
+
 * The original payer **SHALL** make the Task resource and associated document available for a minimum of 7 days after transitioning to complete, or for at least 24 hours after a successful response is returned to a 'read' attempt by the new payer, whichever is less.  This ensures the new payer has an opportunity to re-query the document if an issue occurs during the original read.
 
 * It is theoretically possible for multiple Tasks to point to the same document (e.g. if a patient is transitioning to coverage under two different plans, the payer **MAY** simply update the second Task to point to a coverage transition document originally created for another payer).
