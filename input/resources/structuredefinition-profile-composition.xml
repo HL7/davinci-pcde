@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/lloyd/Documents/SVN/_IGs/davinci-pcde/input-cache/schemas/R4/fhir-single.xsd">
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
 	<id value="profile-composition"/>
 	<url value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition"/>
 	<name value="PCDEComposition"/>
@@ -87,7 +87,7 @@
 			<path value="Composition.section.title"/>
 			<min value="1"/>
 			<mustSupport value="true"/>
-    </element>
+		</element>
 		<element id="Composition.section:ActiveTreatment">
 			<path value="Composition.section"/>
 			<sliceName value="ActiveTreatment"/>

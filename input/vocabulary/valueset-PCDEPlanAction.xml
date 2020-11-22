@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="PCDEPlanAction"/>
+  <url value="http://hl7.org/fhir/us/davinci-pcde/ValueSet/PCDEPlanAction"/>
+  <name value="PCDEPlanAction"/>
+  <title value="PCDE Plan Action"/>
+  <status value="draft"/>
+  <description value="Codes describing interventions in a coverage transition document"/>
+  <immutable value="true"/>
+  <compose>
+    <include>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+    </include>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.6.285">
+        <!-- HCPCS Level II -->
+      </system>
+    </include>
+    <include>
+      <system value="http://hl7.org/fhir/sid/ndc"/>
+    </include>
+  </compose>
+</ValueSet>
