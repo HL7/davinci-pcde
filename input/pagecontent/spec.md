@@ -50,6 +50,9 @@ For this implementation guide to be applicable, the following conditions must be
 
 NOTE: Work to standardize how payer identification will be managed, as well as how the FHIR endpoint for a given payer will be found (e.g. through the use of a registry) is ongoing.  For now, this is left to site-to-site negotiation.
 
+#### Privacy & Security
+This implementation guide inherits all of the requirements and guidance defined in the [HRex Security and Privacy page]({{site.data.fhir.ver.hrex}}/security.html).  Conformant systems must familiarize themselves with and abide by the expectations established there for all functions enabled by this implementation guide.
+
 #### Workflow
 1. Optional: The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
 
