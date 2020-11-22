@@ -21,7 +21,7 @@ This implementation guide is not:
 4. intended to fully automate the review and authorization process for continuity of care for the new payer for current treatments
 
 ### Business Requirements
-The goal of this implementation guide is to complement the payer data exchange implementation guide (PDex) by providing a framework in which a payer can indicate:
+The goal of this implementation guide is to complement the [payer data exchange implementation guide (PDex)](http://hl7.org/fhir/us/davinci-pdex) by providing a framework in which a payer can indicate:
 
 1. active treatment plans that a member is receiving,
 2. conditions that led to the need for the active treatment plans,
@@ -35,7 +35,7 @@ All of the information may not be available in a structured format (or capable o
 ### Clinical Requirements
 Clinical requirements to support this implementation guide include the following:
 
-1.  the ability to define active treatment plans that is being provided to the member which includes not just traditional treatments (e.g. home oxygen therapy for COPD. medications for management of diabetes) and their progress and the relevant providers of that care, but also participation in disease management programs to support a member's chronic illnesses and help manage either specific clinical outcomes or quality of life;
+1.  the ability to define active treatment plans that are being provided to the member which include not just traditional treatments (e.g. home oxygen therapy for COPD. medications for management of diabetes) and their progress and the relevant providers of that care, but also participation in disease management programs to support a member's chronic illnesses and help manage either specific clinical outcomes or quality of life;
 2.  conditions that led to the need for these treatments, such as: COPD - to indicating a need for home oxygen therapy, diabetes - basis for medication management of diabetes, organ transplant - indicating the need for immunosuppressants, etc.;
 3.  guidelines that are used to decide that such a treatment is appropriate.  These can include commercial guidelines such as MCG, InterQual and others.   The goal is to include a reference (e.g. URL) to the appropriate guideline;
 4.	any specific prior authorizations that are in effect to support the treatment such as authorization for home oxygen therapy, and

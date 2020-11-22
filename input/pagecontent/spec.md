@@ -33,7 +33,7 @@ The full set of profiles defined in or used by this implementation guide can be 
 This IG defines custom codes for document types and sections.  Implementers **SHALL** consider the codes 'temporary'.  After implementation testing and confirmation, these custom codes will migrate to standardized codes in an official code system - most likely LOINC.
 
 ### Data Exchange
-This data exchange builds on the Da Vinci [Payer Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex/2019Jun/), [Clinical Data Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex/2019Jun/) and [Payer Data Exchange (PDex)](http://hl7.org/fhir/us/davinci-pdex), and [Health Record Exchange](http://hl7.org/fhir/us/davinci-hrex/2020Sep/) implementation guides, leveraging the [OAuth 2.0-based](http://hl7.org/fhir/us/davinci-pdex/2019Jun/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [non-Task Solicited Communication](http://hl7.org/fhir/us/davinci-cdex/2019Jun/Request_(Solicited_Communication).html#solicited-communication-without-task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
+This data exchange builds on the Da Vinci [Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}}) and [Payer Data Exchange (PDex)]({{site.data.fhir.ver.pdex}}) implementation guides, leveraging the [OAuth 2.0-based]({{site.data.fhir.ver.pdex}}/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [Task-based requested exchange]({{site.data.fhir.ver.hrex}}/exchanging-request.html#task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
 
 #### Pre-conditions
 For this implementation guide to be applicable, the following conditions must be met:
@@ -44,11 +44,11 @@ For this implementation guide to be applicable, the following conditions must be
 
 * The new payer has performed a patient / coverage resolution process and has information about relevant prior coverage
 
-* Both the new payer and the old payer must be able to recognize the each other based on an agreed payer identifier scheme
+* Both the new payer and the old payer must be able to recognize each other based on an agreed payer identifier scheme
 
 * The new payer system knows the base FHIR API URL for the original payer endpoint and has basic business arrangements in place allowing query of data from it
 
-NOTE: Work to standardize how payer identification will be managed, as well as how the FHIR endpoint for a given payer will be found (i.e. through the use of a registry) is ongoing.  For now, this is left to site-to-site negotiation.
+NOTE: Work to standardize how payer identification will be managed, as well as how the FHIR endpoint for a given payer will be found (e.g. through the use of a registry) is ongoing.  For now, this is left to site-to-site negotiation.
 
 #### Workflow
 1. The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
@@ -134,6 +134,7 @@ There are two major sections to a Coverage Transition Document: [Active Treatmen
 
 ##### Active Treatment
 This section should repeat for each "active treatment" the patient is receiving under coverage from the original payer at the time the document is prepared.  Active treatments include any treatment that, to the best of the payer's knowledge, is ongoing and for which the new payer might reasonably expect prior authorizations or claims, such as:
+
 * medications
 * procedures
 * medical equipment
