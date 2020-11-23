@@ -82,8 +82,7 @@ Once the necessary token has been retrieved through the OAuth process, the new p
 
 If the receiving system does not recognize the member identified in Task.for or there are other structural issues with that Task (e.g. requesting payer is not recognized, Task doesn't comply with profile, etc.), then the original payer SHALL respond with an appropriate 4xx or 5xx HTTP error accompanied by an [OperationOutcome]({{site.data.fhir.path}}operationoutcome.html) conveying the reason for failure.
 
-#### Subscription
-Payers **MAY** support [subscriptions]({{site.data.fhir.ver.hrex}}/exchanging-subscription.html) to allow monitoring of changes to the Task resource rather than relying on [polling]({{site.data.fhir.ver.hrex}}/exchanging-polling.html).  Payers making use of subscription SHOULD comply with the [Subscription Backport IG]({{site.data.fhir.ver.subscription}}) which allows pre-adoption of R5 subscription mechanisms in R4-conformant systems.
+In most cases, the creation of the Task will initiate a manual process within the original payer organization to create an appropriate Coverage Transition document.  However, in some cases, a payer might choose to pro-actively create Coverage Transition documents when the patient's coverage ends and is not renewed.  If an appropriate pre-existing document already exists for the member, the original payer **MAY** simply update the Task to reference the existing document rather than creating a new one.  In other cases, a human might review the document and ensure it was still relevant/appropriate but determine there was no need to create a new one.  In either case, the Task would be updated as per usual to point to the existing document.  However, the elapsed time from the posting of the Task requesting the document would be shorter because the document was pre-existing.
 
 #### Tracking Status
 While fulfilling the request, the original payer **MAY** update `Task.status` or `Task.businessStatus.text` to reflect interim status information.  (For example, indicating that the task is in-progress with a date when the document is expected to be ready.)  An example can be seen [here](Task-in-progress.html).
@@ -94,8 +93,8 @@ The payer may be unable to complete a request if the member is unknown or the in
 
 There are two options for monitoring the Task to verify acceptance, determine progress and determine if the requested document is ready for retrieval: subscription and polling.
 
-##### Subscription
-At the time of this publication, the expectations around the use of subscription within U.S. Core for use with R4 have not yet been finalized.  (They are expected to use a pre-adopted version of the R5 subscription mechanism which is significantly revised from the version published as part of R4.)  This specification will be updated once those requirements have stabilized.  In the meantime, payers are permitted to pre-adopt the use of subscription, but will need to negotiate the fine details of how it will work.
+#### Subscription
+Payers **MAY** support [subscriptions]({{site.data.fhir.ver.hrex}}/exchanging-subscription.html) to allow monitoring of changes to the Task resource rather than relying on [polling]({{site.data.fhir.ver.hrex}}/exchanging-polling.html).  Payers making use of subscription SHOULD comply with the [Subscription Backport IG]({{site.data.fhir.ver.subscription}}) which allows pre-adoption of R5 subscription mechanisms in R4-conformant systems.
 
 ##### Polling
 If no subscription was created, the new payer **SHALL** routinely perform a read on the orginal payer's system using the id of the originally created Taskto receive updates to the Task.  Polling is performed by executing a `GET` operation using the `id` received from the original payer when the Task was created, optionally using the `If-Modified-Since` header to limit the data returned if the Task has not been updated since it was last polled.
@@ -125,6 +124,13 @@ This IG uses a [FHIR document]({{site.data.fhir.path}}documents.html) approach t
 The original payer **SHOULD** send all information they have available they believe to be reasonably necessary for the new payer to make a determination of medical necessity.  (Future versions of this specification are expected to tighten this requirement to **SHALL**.)  The original payer is NOT expected solicit data from other organizations, merely to share the data it already has available.  All information disclosed to the new payer is expected to be disclosed within the Coverage Transition document defined by this specification.  Disclosure of information via phone, fax or other means is non-conformant.
 
 While the eventual target of future versions of this IG may be to allow fully automated import and use of the provided payer data, it is likely that at least some cases will always require human review and, in the short term, most/all payers will incorporate human review in the consumption of the data shared.  The document approach significantly simplifies this review process.
+
+{% raw %}
+<blockquote class="stu-note">
+<p>
+Da Vinci is looking for implementer feedback around whether this IG should mandate support (i.e. 0..*, must support) for 'goals' related to an active therapy.  For example, STAR ratings quality measures.  Please indicate whether this is something that would be useful and that your system would be able to support.</p>
+</blockquote>
+{% endraw %}
 
 #### Coverage Transition document structure
 All Coverage Transition documents SHALL comply with the [PCDE Bundle](StructureDefinition-profile-pcde-bundle.html) and [PCDE Composition](StructureDefinition-profile-composition.html) profiles.  These profiles set out a document structure as follows:

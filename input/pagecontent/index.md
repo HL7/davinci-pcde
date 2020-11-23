@@ -58,3 +58,7 @@ This implementation guide relies on the following other specifications:
 * **[Subscription Backport Jan 2021 ballot]({{site.data.fhir.ver.subscription}})** - The balloted version of the R4 backport of R5 subscriptoin capabilities.  This implementation guide will be updated to be based on the official published version of this IG once the ballot process is complete.
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+
+
+### Implementation Guidance
+In addition to this implementation guide, Da Vinci maintains a more dynamic 'supplemental' implementation guide containing additional examples and specific advice about how to best construct Coverage Transition documents for various real-world scenarios.  This supplemental material can be found [here](https://confluence.hl7.org/display/DVP/PCDE+Supplemental+Guide) on HL7's Confluence site.
