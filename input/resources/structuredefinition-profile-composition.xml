@@ -157,7 +157,7 @@
 			<mustSupport value="true"/>
 		</element>
 		<element id="Composition.section:ActiveTreatment.section:Treatment.title">
-			<path value="Composition.section.title"/>
+			<path value="Composition.section.section.title"/>
 			<short value="[treatment type]"/>
 		</element>
 		<element id="Composition.section:ActiveTreatment.section:Treatment.code">
@@ -208,7 +208,7 @@
 			<mustSupport value="true"/>
 		</element>
 		<element id="Composition.section:ActiveTreatment.section:PriorCoverage.title">
-			<path value="Composition.section.title"/>
+			<path value="Composition.section.section.title"/>
 			<short value="Prior Coverage"/>
 		</element>
 		<element id="Composition.section:ActiveTreatment.section:PriorCoverage.code">
@@ -261,7 +261,7 @@
 			<mustSupport value="true"/>
 		</element>
 		<element id="Composition.section:ActiveTreatment.section:SupportingInformation.title">
-			<path value="Composition.section.title"/>
+			<path value="Composition.section.section.title"/>
 			<short value="Supporting Information"/>
 		</element>
 		<element id="Composition.section:ActiveTreatment.section:SupportingInformation.code">
