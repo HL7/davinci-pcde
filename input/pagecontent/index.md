@@ -1,7 +1,7 @@
 {% raw %}
 <blockquote class="stu-note">
 <p>
-This specification is currently undergoing ballot and connectathon testing.  It is expected to evolve, possibly significantly, as part of that process.
+This is the initial official release of this specification.  It includes feedback from both ballot review and connectathon testing.  However, it will continue to evolve based on implementer feedback.
 </p>
 <p>
 Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci PCDE" as the specification.
@@ -27,7 +27,7 @@ This need for continuity across payers has been recognized also by the United St
 
 The DaVinci Project is already supporting the exchange of payer information for prior authorization, formulary information sharing, provider directory and other member-related health information. Furthermore, there are aspects of the need to exchange active treatment plans and decisions which should align to use cases beyond the payer exchange use case. The coverage decision exchange document allows the capture of relevant clinical information about decisions, treatments, and their context using CarePlan. This aligns with the approach that clinicians and clinical systems take to describe this same content during transitions of care. This should make it easier to integrate information received by payers from providers.
 
-The form and manner of the content in the CarePlan is aligned to the regulatory framework of data exchange at transitions of care including Goals and Treatment Plan as well as the USCDI mandated by the Office of the National Coordinator for Health IT (ONC) and CMS.
+The form and manner of the content in the CarePlan is aligned to the regulatory framework of data exchange at transitions of care including Goals and Treatment Plan as well as the United States Core Data for Interoperability (USCDI) mandated by the Office of the National Coordinator for Health IT (ONC) and the Center for Medicated Services (CMS).  The data shared within the document will depend on the nature of the patients past care, but could includepast prior authorizations and claims, information about past meds and treatments, recent and historical lab results, implanted or supplied devices, etc.
 
 For this use case, we address the need for continuity of treatment when patients move from one payer's health insurance plan to another.  In the current situation, the patient and new payers often don't have the information needed to continue treatment in progress.  As a result, patients can face a break in continuity of care, challenges to share additional information, and increased costs as tests are re-run or prior therapies need to be re-tested in order to comply with the rules of the new payer.  By enabling an authorized transfer of information from the original payer to the new payer, the new payer can have access to information about what therapies are currently in place and the rationale for them, as well as what precursor steps have been taken to demonstrate the medical necessity and appropriateness of the current therapy.  By automating this exchange and maximizing the computability of the information shared, a process that frequently takes weeks or months can be reduced to a few days or even minutes - reducing costs and improving patient safety, quality and experience.
 
