@@ -16,16 +16,15 @@
   </contact>
   <description value="Guidelines for conveying coverage information from one payer to another when a patient changes insurance"/>
   <jurisdiction>
-    <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-    </coding>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+		</coding>
   </jurisdiction>
   <packageId value="hl7.fhir.us.davinci-pcde"/>
   <fhirVersion value="4.0.1"/>
   <dependsOn id="uscore">
     <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
-<!--    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core-3.1.0"/>-->
     <packageId value="hl7.fhir.us.core"/>
     <version value="3.1.0"/>
   </dependsOn>
@@ -37,12 +36,12 @@
   <dependsOn id="pdex">
     <uri value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
     <packageId value="hl7.fhir.us.davinci-pdex"/>
-    <version value="0.1.0"/>
+    <version value="current"/>
   </dependsOn>
   <dependsOn id="pas">
     <uri value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"/>
     <packageId value="hl7.fhir.us.davinci-pas"/>
-    <version value="0.1.0"/>
+    <version value="current"/>
   </dependsOn>
   <dependsOn id="subscription">
     <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>

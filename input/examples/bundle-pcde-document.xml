@@ -15,6 +15,10 @@
     <resource>
       <Composition>
         <id value="1"/>
+        <meta>
+          <!-- There's no expectation that most instances would declare a profile.  It's done here to help with publishing validation -->
+          <profile value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition"/>
+        </meta>
         <status value="final"/>
         <type>
           <coding>
@@ -207,7 +211,7 @@
         </provider>
         <priority>
           <coding>
-            <system value="http://terminology/hl7.org/CodeSystem/processpriority"/>
+            <system value="http://terminology.hl7.org/CodeSystem/processpriority"/>
             <code value="normal"/>
             <display value="Normal"/>
           </coding>

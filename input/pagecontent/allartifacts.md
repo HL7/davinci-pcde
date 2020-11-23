@@ -8,19 +8,16 @@ The FHIR artifacts used by PCDE are organized according to whether the content d
     <td><a href="artifacts.html">PCDE-specific Artifacts</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/STU3.1/profiles.html">US Core (3.1.0 - R4 based)</a></td>
+    <td><a href="{{site.data.fhir.ver.uscore}}/profiles.html">US Core (3.1.0 - R4 based)</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/davinci-pdex/2019Jun/profiles.html">Da Vinci Payer Data Exchange (PDex) (0.1.0 July 2019 ballot)</a></td>
+    <td><a href="{{site.data.fhir.ver.hrex}}/artifacts.html">Da Vinci Health Record Exchange (HRex) (0.2.0 - Sept 2020 ballot)</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/davinci-cdex/2019Jun/profiles.html">Da Vinci Clinical Data Exchange (CDex) (0.1.0 July 2019 ballot)</a></td>
+    <td><a href="{{site.data.fhir.ver.pdex}}/profiles.html">Da Vinci Payer Data Exchange (PDex) (1.0.0 STU1)</a></td>
   </tr>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun/profiles.html">Da Vinci Health Record Exchange (HRex) (0.1.0 - July 2019 ballot)</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html">Da Vinci Prior Authorization Support (PAS) (0.1.0 - Sept 2019 ballot)</a></td>
+    <td><a href="{{site.data.fhir.ver.pas}}/artifacts.html">Da Vinci Prior Authorization Support (PAS) (1.0.0 - STU1)</a></td>
   </tr>
 </table>
 

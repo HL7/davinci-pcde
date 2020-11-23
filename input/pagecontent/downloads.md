@@ -4,7 +4,7 @@ This implementation guide is web-based and is intended to be browsed online.  Ho
 
 * This [full IG](full-ig.zip)
 * The [resource definitions](definitions.json.zip)  from this IG for use with the FHIR validator (see below)
-* The full FHIR [R4]({{site.data.fhir.path}}fhir-spec-r4.zip) specifications
+* The full FHIR [R4]({{site.data.fhir.path}}fhir-spec.zip) specifications
 * The [R3.1]({{site.data.fhir.ver.uscore}}/full-ig.zip) version of the US Core implementation guide
 * The [2020Sep]({{site.data.fhir.ver.hrex}}/full-ig.zip) version of the Da Vinci Health Record Exchange (HRex) implementation guide
 * The [2019Jul]({{site.data.fhir.ver.pdex}}/full-ig.zip) version of the Da Vinci Payer Data Exchange (PDex) implementation guide

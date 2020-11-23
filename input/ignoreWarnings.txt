@@ -2,6 +2,7 @@
 
 # These are all conformance resources - and we expect them to only validate against the base resources
 INFORMATION: CodeSystem/PCDEtempCodes: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+INFORMATION: ImplementationGuide/hl7.fhir.us.davinci-pcde: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
 INFORMATION: StructureDefinition/pcde-task-request: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 INFORMATION: StructureDefinition/pcde-task-search: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 INFORMATION: StructureDefinition/profile-careplan: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
@@ -12,13 +13,15 @@ INFORMATION: ValueSet/PCDEPlanActionReason: ValueSet: Validate resource against 
 INFORMATION: ValueSet/PCDESectionCode: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 
 # These are the profiles declared for these examples and they are validating as expected
+INFORMATION: Bundle/pcde-document: Bundle: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-pcde-bundle
 INFORMATION: Task/completed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search
 INFORMATION: Task/failed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search
 INFORMATION: Task/in-progress: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search
 INFORMATION: Task/requested: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-request
 
-# This is validated by the invariant on the Bundle
+# This is validated in the Bundle example
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition'): The Implementation Guide contains no explicitly linked examples for this profile
+INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-careplan'): The Implementation Guide contains no explicitly linked examples for this profile
 
 # There is no expectation (at the moment) that the terminology server will be able to validate codes from HCPCS Level II
 WARNING: ValueSet.where(id = 'PCDEPlanAction'): Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.6.285
