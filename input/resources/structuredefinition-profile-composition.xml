@@ -98,6 +98,7 @@
 		<element id="Composition.section:ActiveTreatment">
 			<path value="Composition.section"/>
 			<sliceName value="ActiveTreatment"/>
+			<short value="Include if there are active treatments"/>
 			<min value="0"/>
 			<max value="*"/>
 			<mustSupport value="true"/>
@@ -152,6 +153,7 @@
 		<element id="Composition.section:ActiveTreatment.section:Treatment">
 			<path value="Composition.section.section"/>
 			<sliceName value="Treatment"/>
+			<short value="One treatment per sub-section"/>
 			<min value="1"/>
 			<max value="1"/>
 			<mustSupport value="true"/>

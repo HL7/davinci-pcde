@@ -17,34 +17,47 @@
 		</element>
 		<element id="CarePlan.instantiatesCanonical">
 			<path value="CarePlan.instantiatesCanonical"/>
+			<short value="Protocol followed (FHIR)"/>
+			<type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Measure"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
+      </type>
 			<mustSupport value="true"/>
 		</element>
 		<element id="CarePlan.instantiatesUri">
 			<path value="CarePlan.instantiatesUri"/>
+			<short value="Protocol followed (URL)"/>
 			<mustSupport value="true"/>
 		</element>
 		<element id="CarePlan.status">
 			<path value="CarePlan.status"/>
-			<mustSupport value="true"/>
+			<fixedCode value="active"/>
 		</element>
 		<element id="CarePlan.intent">
 			<path value="CarePlan.intent"/>
-			<mustSupport value="true"/>
+			<fixedCode value="plan"/>
 		</element>
 		<element id="CarePlan.subject">
 			<path value="CarePlan.subject"/>
+			<short value="member"/>
 			<mustSupport value="true"/>
 		</element>
 		<element id="CarePlan.activity">
 			<path value="CarePlan.activity"/>
+			<short value="Active treatment"/>
+			<min value="1"/>
 			<mustSupport value="true"/>
 		</element>
 		<element id="CarePlan.activity.detail">
 			<path value="CarePlan.activity.detail"/>
+			<min value="1"/>
 			<mustSupport value="true"/>
 		</element>
 		<element id="CarePlan.activity.detail.code">
 			<path value="CarePlan.activity.detail.code"/>
+			<short value="Type of treatment"/>
 			<mustSupport value="true"/>
 			<binding>
         <strength value="extensible"/>
@@ -53,6 +66,7 @@
 		</element>
 		<element id="CarePlan.activity.detail.reasonCode">
 			<path value="CarePlan.activity.detail.reasonCode"/>
+			<short value="Reason for treatment (code)"/>
 			<mustSupport value="true"/>
 			<binding>
         <strength value="extensible"/>
@@ -61,6 +75,7 @@
 		</element>
 		<element id="CarePlan.activity.detail.reasonReference">
 			<path value="CarePlan.activity.detail.reasonReference"/>
+			<short value="Reason for treatment (reference)"/>
 			<type>
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
