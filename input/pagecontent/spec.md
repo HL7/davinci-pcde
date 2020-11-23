@@ -13,7 +13,6 @@ Before reading this formal specification, implementers should first familiarize 
 
 * The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have necessary foundation to understand the constraints and usage guidance described here.
 
-
 #### Conformance and Conventions
 This implementation guide adheres to the conformance documentation conventions found in the [HRex Conformance Expecations page]({{site.data.fhir.ver.hrex}}/conformance.html), including expectations around the meaning of 'Must Support'.
 
@@ -122,6 +121,8 @@ NOTES:
 
 ### Data structure
 This IG uses a [FHIR document]({{site.data.fhir.path}}documents.html) approach to organizing the information shared by the original payer system.  This aligns with the approach typically used for any other sort of transition of responsibility (be it clinical or administrative responsibility).  The document approach allows arbitrary data objects (typically FHIR resources) in logical groupings for human consumption/review and allows human narrative to provide context and guidance on interpretting and using the information.
+
+The original payer SHOULD send all information they have available they believe to be reasonably necessary for the new payer to make a determination of medical necessity.  (Future versions of this specification are expected to tighten this requirement to SHALL.)
 
 While the eventual target of future versions of this IG may be to allow fully automated import and use of the provided payer data, it is likely that at least some cases will always require human review and, in the short term, most/all payers will incorporate human review in the consumption of the data shared.  The document approach significantly simplifies this review process.
 
