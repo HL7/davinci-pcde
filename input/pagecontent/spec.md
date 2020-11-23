@@ -46,17 +46,19 @@ NOTE: Work to standardize how payer identification will be managed, as well as h
 This implementation guide inherits all of the requirements and guidance defined in the [HRex Security and Privacy page]({{site.data.fhir.ver.hrex}}/security.html).  Conformant systems must familiarize themselves with and abide by the expectations established there for all functions enabled by this implementation guide.
 
 #### Workflow
-1. The new payer executes a [Member Match]({{site.data.fhir.ver.hrex}}/OperationDefinition-member-match.html) operation using the member's old insurance information and demographics to determine the patient identifier on the original payer's system.
+1. Optional: The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
 
-2. Optional: The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
+2. The new payer executes a [Member Match]({{site.data.fhir.ver.hrex}}/OperationDefinition-member-match.html) operation using the member's old insurance information and demographics to determine the patient identifier on the original payer's system.
 
-3. The new payer's system (possibly using the token provided in #2) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](#subscription) on the old payers system, requesting notifications about updates to the newly created Task.
+3. The new payer's system (possibly using the token provided in #1) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](#subscription) on the old payers system, requesting notifications about updates to the newly created Task.
 
 4. The source (original) payer either locates an existing document (previously prepared) or assembles the information needed and creates the requested document.  Updates are made to the `Task.status` element and, optionally, human-readable status information within `Task.businessStatus.text` element as the task progresses through different [states](https://www.hl7.org/fhir/task.html#statemachine).  (In PCDE, the Task is limited to the states 'requested', 'in-progress', 'completed' or 'failed'.)  The original payer updates `Task.output` with a reference to the document when `Task.status` is completed.
 
-5. The new payer queries the origninal payer's system for updates to the Task.  This is either done by polling at regular intervals or by responding to a Subscription notification.  When the `Task.status` is completed, the new payer retrieves the [Coverage Transition Document](#coverage-transition-document-structure) pointed to by the `Task.output`.
+5. The new payer queries the origninal payer's system for updates to the Task.  This is either done by polling at regular intervals or by responding to a Subscription notification.  
 
-6. The new payer incorporates the information in the document into their utilization management / utilization review process for review and approval of the ongoing treatments for the new member.
+6. When the `Task.status` is completed, the new payer retrieves the [Coverage Transition Document](#coverage-transition-document-structure) pointed to by the `Task.output`.
+
+7. The new payer incorporates the information in the document into their utilization management / utilization review process for review and approval of the ongoing treatments for the new member.
 
 The following diagram illustrates the workflow that is supported by this implementation guide:
 
