@@ -33,6 +33,8 @@ For this use case, we address the need for continuity of treatment when patients
 
 This implementation guide defines standardized mechanisms for a patient or payer to enable a transfer of "current active treatments" with other relevant metadata and coverage-related information from a prior payer to a new payer. For example, gender transition information, amputations or other past medical history that may impact the evaluation of the appropriateness of future claims. It also defines a standardized structure for organizing and encoding that information to ease its consumption by the new payer organization.
 
+Obviously, actual continuity of care will be governed by the policies of the new payer.  It is possible that the patient's new coverage will not cover previous therapies or that additional information will be required that is not available from the original payer.  However, disruption in continuity of care due to the new payer being unaware of information held by the original payer should be significantly diminished through the adoption of this implementation guide.
+
 ### Content and organization
 The implementation guide is organized into the following sections:
 
