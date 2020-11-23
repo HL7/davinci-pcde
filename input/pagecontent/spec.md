@@ -31,15 +31,15 @@ This data exchange builds on the Da Vinci [Health Record Exchange (HRex)]({{site
 #### Pre-conditions
 For this implementation guide to be applicable, the following conditions must be met:
 
-* A member of a covered plan has enrolled in another covered plan offered by another payer
+* A member of a covered plan has enrolled in another covered plan offered by another payer.
 
-* That member is currently being treated for some chronic or acute condition and wishes the treatment to continue
+* That member is currently being treated for some chronic or acute condition and wishes the treatment to continue.
 
-* The new payer has performed a patient / coverage resolution process and has information about relevant prior coverage
+* The new payer has performed a patient / coverage resolution process and has information about relevant prior coverage.
 
-* Both the new payer and the old payer must be able to recognize each other based on an agreed payer identifier scheme
+* Both the new payer and the old payer must be able to recognize each other based on an agreed payer identifier scheme.
 
-* The new payer system knows the base FHIR API URL for the original payer endpoint and has basic business arrangements in place allowing query of data from it
+* The new payer system knows the base FHIR API URL for the original payer endpoint and has basic business arrangements in place allowing query of data from it.
 
 NOTE: Work to standardize how payer identification will be managed, as well as how the FHIR endpoint for a given payer will be found (e.g. through the use of a registry) is ongoing.  For now, this is left to site-to-site negotiation.
 
@@ -51,7 +51,7 @@ This implementation guide inherits all of the requirements and guidance defined 
 
 2. Optional: The member uses an interface/portal or SMART app within the new payer's system to authenticate to the original payer's system and authorize the prior payer to allow the new payer to access the member's clinical and treatment data.  The original payer's system provides an OAuth 2.0 token to the new plan.
 
-3. The new payer's system (possibly using the token provided in #2) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](#subscription) on the old payers system, requesting notifications about updates to the newly created Task
+3. The new payer's system (possibly using the token provided in #2) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](#subscription) on the old payers system, requesting notifications about updates to the newly created Task.
 
 4. The original payer either locates an existing document (previously prepared) or assembles the information needed and creates the requested document.  Updates are made to the `Task.status` element and, optionally, human-readable status information within `Task.businessStatus.text` element as the task progresses through different [states](https://www.hl7.org/fhir/task.html#statemachine).  (In PCDE, the Task is limited to the states 'requested', 'in-progress', 'completed' or 'failed'.)  The payer updates `Task.output` with a reference to the document when `Task.status` is completed.
 
