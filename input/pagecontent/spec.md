@@ -176,6 +176,8 @@ When interpreting information shared in a coverage transfer document, it is ofte
 ##### Other Documentation
 These sections allow conveying information that is not directly related to a current active therapy but which may be relevant to allowing the new payer to provide appropriate care.  For example, conveying that a patient has had a double-mastectomy in the past.  That may not be related to 'active therapy', but would still be relevant in terms of the new payer knowing not to send reminders for mamogram treatments.
 
+The expectation is that the original payer may have this kind of information available and **SHOULD** send it where it could be relevant to ongoing care activities; however, there is not a requirement to send information unless it is associated with active treatment.
+
 Multiple sections are allowed so that separate narratives can be used to group resources that are related together.  Narrative-only sections can be used to convey information for which no discrete data exists or is relevant.
 
 #### Additional Notes
