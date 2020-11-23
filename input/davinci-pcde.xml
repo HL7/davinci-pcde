@@ -2,7 +2,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
   <id value="hl7.fhir.us.davinci-pcde"/>
   <url value="http://hl7.org/fhir/us/davinci-pcde/ImplementationGuide/hl7.fhir.us.davinci-pcde"/>
-  <version value="0.4.1"/>
+  <version value="1.0.0"/>
   <name value="PayerCoverageDecisionExchange"/>
   <title value="Da Vinci - Payer Coverage Decision Exchange"/>
   <status value="draft"/>
@@ -29,25 +29,25 @@
     <packageId value="hl7.fhir.us.core"/>
     <version value="3.1.0"/>
   </dependsOn>
+  <dependsOn id="hrex">
+    <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
+    <packageId value="hl7.fhir.us.davinci-hrex"/>
+    <version value="0.2.0"/>
+  </dependsOn>
   <dependsOn id="pdex">
     <uri value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
     <packageId value="hl7.fhir.us.davinci-pdex"/>
+    <version value="0.1.0"/>
+  </dependsOn>
+  <dependsOn id="pas">
+    <uri value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"/>
+    <packageId value="hl7.fhir.us.davinci-pas"/>
     <version value="0.1.0"/>
   </dependsOn>
   <dependsOn id="subscription">
     <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>
     <packageId value="hl7.fhir.uv.subscriptions-backport"/>
     <version value="current"/>
-  </dependsOn>
-  <dependsOn id="hrex">
-    <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
-    <packageId value="hl7.fhir.us.davinci-hrex"/>
-    <version value="current"/>
-  </dependsOn>
-  <dependsOn id="pas">
-    <uri value="http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas"/>
-    <packageId value="hl7.fhir.us.davinci-pas"/>
-    <version value="0.1.0"/>
   </dependsOn>
   <definition>
     <resource>

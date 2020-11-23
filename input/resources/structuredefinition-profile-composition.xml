@@ -3,7 +3,9 @@
 	<id value="profile-composition"/>
 	<url value="http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition"/>
 	<name value="PCDEComposition"/>
+	<title value="PCDE Coverage Transition Composition Profile"/>
 	<status value="active"/>
+	<description value="Constraints on Composition to define the root and table of contents for a Coverage Transition Document"/>
 	<fhirVersion value="4.0.1"/>
 	<kind value="resource"/>
 	<abstract value="false"/>
@@ -57,7 +59,6 @@
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-device"/>
       </type>
 			<mustSupport value="true"/>
 		</element>

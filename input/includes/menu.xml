@@ -41,19 +41,16 @@
         <a href="{{site.data.info.assets}}artifacts.html">PCDE-specific Artifacts</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/core/STU3.1/profiles.html">US Core (3.1.0 - R4 based)</a>
+        <a href="{{site.data.fhir.ver.uscore}}/profiles.html">US Core (3.1.0 - R4 based)</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/davinci-pdex/2019Jun/profiles.html">PDex Profiles (0.1.0 - July 2019 ballot)</a>
+        <a href="{{site.data.fhir.ver.hrex}}/profiles.html">HRex Profiles (0.2.0 - Sept 2029 ballot)</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/davinci-cdex/2019Jun/profiles.html">CDex Profiles (0.1.0 - July 2019 ballot)</a>
+        <a href="{{site.data.fhir.ver.pdex}}/profiles.html">PDex Profiles (1.0.0 - First STU)</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun/profiles.html">HRex Profiles (0.1.0 - July 2019 ballot)</a>
-      </li>
-      <li>
-        <a href="http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html">PAS Profiles (0.1.0 - Sept 2019 ballot)</a>
+        <a href="{{site.data.fhir.ver.pas}}/artifacts.html">PAS Profiles (1.0.0 - First STU)</a>
       </li>
     </ul>
   </li>
@@ -75,7 +72,7 @@
         <a href="{{site.data.fhir.ver.pdex}}">PDex (1.0.0 - Initial release)</a>
       </li>
       <li>
-        <a href="{{site.data.fhir.ver.pas}}">PAS (1.0.0 - Initial release)</a>
+        <a href="{{site.data.fhir.ver.pas}}">PAS (1.0.0 - First STU)</a>
       </li>
       <li>
         <a href="{{site.data.fhir.ver.subscription}}">Subscriptions Backport (0.1.0 - January 2021 ballot)</a>

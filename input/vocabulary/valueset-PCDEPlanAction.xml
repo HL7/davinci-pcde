@@ -6,7 +6,7 @@
   <title value="PCDE Plan Action"/>
   <status value="draft"/>
   <description value="Codes describing interventions in a coverage transition document"/>
-  <immutable value="true"/>
+  <copyright value="Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved"/>
   <compose>
     <include>
       <system value="http://www.ama-assn.org/go/cpt"/>
