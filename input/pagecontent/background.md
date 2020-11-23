@@ -41,7 +41,7 @@ Because of this IG's focus on document creation, implementers should also famili
 This implementation guide  builds on the following IGs:
 * [Da Vinci Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}})
 * [Da Vinci Health Record Exchange (PDex)]({{site.data.fhir.ver.pdex}})
-* [Da Vinci Prior Authorization Support (PAS)](http://hl7.org/fhir/us/davinci-pas/2019Sep)
-* [US Core 3.1 (R4-based)](http://hl7.org/fhir/us/core/STU3.1)
+* [Da Vinci Prior Authorization Support (PAS)](site.data.fhir.ver.pas}})
+* [US Core 3.1 (R4-based)]({{site.data.fhir.ver.uscore}})
 
 Implementers should familiarize themselves with the [Task-based]({{site.data.fhir.ver.hrex}}/https://build.fhir.org/ig/HL7/davinci-ehrx/exchanging-request.html#requesting-exchange-using-task) communication mechanism and the [member match]({{site.data.fhir.ver.hrex}}/OperationDefinition-member-match.html) operation defined within HRex and the profiles defined in that IG as well as all of the others.

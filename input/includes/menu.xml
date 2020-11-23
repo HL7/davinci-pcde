@@ -63,22 +63,22 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
+        <a href="{{site.data.fhir.path}}index.html">FHIR R4 Spec</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/core/STU3.1">US Core (3.1.0 - R4 based)</a>
+        <a href="{{site.data.fhir.ver.uscore}}">US Core (3.1.0 - R4 based)</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/davinci-pdex/2019Jun">PDex (0.1.0 - July 2019 ballot)</a>
+        <a href="{{site.data.fhir.ver.hrex}}">HRex (0.2.0 - Sept 2020 ballot)</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/davinci-cdex/2019Jun">CDex (0.1.0 - July 2019 ballot)</a>
+        <a href="{{site.data.fhir.ver.pdex}}">PDex (1.0.0 - Initial release)</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun">HRex (0.1.0 - July 2019 ballot)</a>
+        <a href="{{site.data.fhir.ver.pas}}">PAS (1.0.0 - Initial release)</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/davinci-pas/2019Sep">PAS (0.1.0 - Sept 2019 ballot)</a>
+        <a href="{{site.data.fhir.ver.subscription}}">Subscriptions Backport (0.1.0 - January 2021 ballot)</a>
       </li>
     </ul>
   </li>
