@@ -24,6 +24,8 @@ Technical support and guidance:
 Reference implementation:
 
 * Jason Walonski (Mitre)
+* Joe Minieri (Mitre)
+* May Terry (Mitre)
 
 This implementation guide was created under the supervision and review of the HL7 [Financial Management](http://www.hl7.org/Special/committees/fm) (sponsor) and [Attachments](http://www.hl7.org/Special/Committees/claims) (co-sponsor) work groups.
 
