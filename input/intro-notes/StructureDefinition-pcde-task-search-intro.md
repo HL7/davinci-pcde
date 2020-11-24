@@ -1,0 +1,1 @@
+This profile defines what a Task should look like when soliciting a PCDE Transition of Coverage document.It builds on the base profile defined in HRex and constrains the type of information being requested to a specific document code.  It also forces the request to be organization to organization.

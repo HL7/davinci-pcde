@@ -149,7 +149,7 @@
         <id value="1"/>
         <instantiatesUri value="http://originalinsuranceinc.com/consultReviewURI"/>
         <status value="active"/>
-        <intent value="order"/>
+        <intent value="plan"/>
         <category>
           <coding>
             <system value="http://hl7.org/fhir/us/core/CodeSystem/careplan-category"/>
@@ -183,22 +183,23 @@
       <Claim>
         <id value="1"/>
         <identifier>
-          <system value="http://originalinsuranceinc.com/fhir/NamingSystem/PATIENT_EVENT_TRACE_NUMBER"/>
+          <system value="http://example.org/PATIENT_EVENT_TRACE_NUMBER"/>
           <value value="111099"/>
+          <assigner>
+            <identifier>
+              <system value="http://example.org/USER_ASSIGNED"/>
+              <value value="9012345678"/>
+            </identifier>
+          </assigner>
         </identifier>
         <status value="active"/>
         <type>
           <coding>
-            <system value="http://example.org/UM_REQUEST_CATEGORY_CODE"/>
-            <code value="SC"/>
-            <display value="Specialty Care Review"/>
+            <system value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+            <code value="professional"/>
           </coding>
         </type>
-        <use value="preauthorization">
-          <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-certificationType">
-            <valueCode value="I"/>
-          </extension>
-        </use>
+        <use value="preauthorization"/>
         <patient>
           <reference value="Patient/1"/>
         </patient>
@@ -207,7 +208,7 @@
           <reference value="Organization/1"/>
         </insurer>
         <provider>
-          <reference value="PractitionerRole/1"/>
+          <reference value="http://example.org/fhir/Organization/provider"/>
         </provider>
         <priority>
           <coding>
@@ -216,19 +217,20 @@
             <display value="Normal"/>
           </coding>
         </priority>
-        <prescription>
-          <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-requestedService">
-            <valueReference>
-              <reference value="ServiceRequest/1"/>
-            </valueReference>
-          </extension>
-          <display value="see requested service extension"/>
-        </prescription>
+        <careTeam>
+          <sequence value="1"/>
+          <provider>
+            <reference value="http://example.org/fhir/Organization/provider"/>
+          </provider>
+        </careTeam>
         <diagnosis>
           <sequence value="1"/>
-          <diagnosisReference>
-            <reference value="Condition/1"/>
-          </diagnosisReference>
+          <diagnosisCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/sid/icd-10-cm"/>
+              <code value="G89.4"/>
+            </coding>
+          </diagnosisCodeableConcept>
         </diagnosis>
         <insurance>
           <sequence value="1"/>
@@ -237,6 +239,47 @@
             <reference value="Coverage/1"/>
           </coverage>
         </insurance>
+        <item>
+          <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceItemRequestType">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://codesystem.x12.org/005010/1525"/>
+                <code value="SC"/>
+                <display value="Specialty Care Review"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-certificationType">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://codesystem.x12.org/005010/1322"/>
+                <code value="I"/>
+                <display value="Initial"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-requestedService">
+            <valueReference>
+              <reference value="ServiceRequest/1"/>
+            </valueReference>
+          </extension>
+          <sequence value="1"/>
+          <careTeamSequence value="1"/>
+          <diagnosisSequence value="1"/>
+          <productOrService>
+            <coding>
+              <system value="http://codesystem.x12.org/005010/1365"/>
+              <code value="3"/>
+              <display value="Consultation"/>
+            </coding>
+          </productOrService>
+          <locationCodeableConcept>
+            <coding>
+              <system value="https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set"/>
+              <code value="11"/>
+            </coding>
+          </locationCodeableConcept>
+        </item>
       </Claim>
     </resource>
   </entry>
@@ -245,18 +288,15 @@
     <resource>
       <ClaimResponse>
         <id value="1"/>
-        <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction">
-          <valueCode value="A1"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizedEventDate">
-          <valuePeriod>
-            <start value="2005-05-02"/>
-            <end value="2005-06-02"/>
-          </valuePeriod>
-        </extension>
         <identifier>
-          <system value="http://originalinsuranceinc.com/fhir/NamingSystem/REVIEW_IDENTIFICATION_NUMBER"/>
-          <value value="AUTH0001"/>
+          <system value="http://example.org/PATIENT_EVENT_TRACE_NUMBER"/>
+          <value value="111099"/>
+          <assigner>
+            <identifier>
+              <system value="http://example.org/USER_ASSIGNED"/>
+              <value value="9012345678"/>
+            </identifier>
+          </assigner>
         </identifier>
         <status value="active"/>
         <type>
@@ -274,9 +314,40 @@
           <reference value="Organization/1"/>
         </insurer>
         <requestor>
-          <reference value="PractitionerRole/1"/>
+          <reference value="http://example.org/fhir/Organization/provider"/>
         </requestor>
         <outcome value="complete"/>
+        <item>
+          <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction">
+            <extension url="number">
+              <valueString value="AUTH0001"/>
+            </extension>
+            <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewActionCode">
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://codesystem.x12.org/005010/306"/>
+                  <code value="A1"/>
+                  <display value="Certified in total"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+          </extension>
+          <extension url="http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDate">
+            <valuePeriod>
+              <start value="2005-05-02"/>
+              <end value="2005-06-02"/>
+            </valuePeriod>
+          </extension>
+          <itemSequence value="1"/>
+          <adjudication>
+            <category>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/adjudication"/>
+                <code value="submitted"/>
+              </coding>
+            </category>
+          </adjudication>
+        </item>
       </ClaimResponse>
     </resource>
   </entry>
@@ -302,7 +373,7 @@
       <ServiceRequest>
         <id value="1"/>
         <status value="active"/>
-        <intent value="plan"/>
+        <intent value="order"/>
         <code>
           <coding>
             <system value="http://example.org/SERVICE_TYPE_CODE"/>

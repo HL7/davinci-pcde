@@ -156,7 +156,7 @@ This section should repeat for each "active treatment" the patient is receiving 
 * enrollment in disease management programs
 * etc.
 
-If a patient has no active treatments, there will be no sections specified.  If there are no active treatments and no [Other Documentation](#Other_Documentation) to provide, then no document will be produced and the final Task status will be 'failed' with a statusReason indicating there is no information to share.
+If a patient has no active treatments, there will be no sections specified.  If there are no active treatments and no [Other Documentation](#other-documentation) to provide, then no document will be produced and the final Task status will be 'failed' with a statusReason indicating there is no information to share.
 
 Payer knowledge of what treatments are 'active' might come from prior authorizations, recently submitted claims or from clinical information shared with the payer as part of care management or other processes.
 

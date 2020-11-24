@@ -1,0 +1,1 @@
+This simple profile enforces the rules for a FHIR document Bundle, with an additional constraint that forces the first resource to be a Composition that complies with the [PCDE Composition](StructureDefinition-profile-composition.html) profile.

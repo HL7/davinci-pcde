@@ -1,0 +1,1 @@
+This profile defines what a Task should look like when POSTed to the 'original' payer by the 'new' payer.  It builds on the [Task search](StructureDefinition-pcde-task-search.html) profile, but locks down the status and constrains out data elements that should not be present when submitting the original request.
