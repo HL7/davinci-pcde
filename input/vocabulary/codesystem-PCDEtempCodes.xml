@@ -14,7 +14,7 @@
 		<definition value="A document that details information related to transitioning coverage from one payor to another."/>
 	</concept>
 	<concept>
-    <code value="_sections"/>
+    <code value="_section"/>
     <concept>
       <code value="activeTreatment"/>
       <display value="Active Treatments"/>

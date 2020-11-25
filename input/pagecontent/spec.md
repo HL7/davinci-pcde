@@ -50,11 +50,11 @@ This implementation guide inherits all of the requirements and guidance defined 
 
 2. The new payer executes a [Member Match]({{site.data.fhir.ver.hrex}}/OperationDefinition-member-match.html) operation using the member's old insurance information and demographics to determine the patient identifier on the original payer's system.
 
-3. The new payer's system (possibly using the token provided in #1) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](#subscription) on the old payers system, requesting notifications about updates to the newly created Task.
+3. The new payer's system (possibly using the token provided in #1) requests a [Coverage Transition Document](#coverage-transition-document-structure) from the prior plan by POSTing a [Task](StructureDefinition-pcde-task-request.html) to their system.  Optionally, the new payer creates a [Subscription](#subscription) on the old payer's system, requesting notifications about updates to the newly created Task.
 
 4. The source (original) payer either locates an existing document (previously prepared) or assembles the information needed and creates the requested document.  Updates are made to the `Task.status` element and, optionally, human-readable status information within `Task.businessStatus.text` element as the task progresses through different [states](https://www.hl7.org/fhir/task.html#statemachine).  (In PCDE, the Task is limited to the states 'requested', 'in-progress', 'completed' or 'failed'.)  The original payer updates `Task.output` with a reference to the document when `Task.status` is completed.
 
-5. The new payer queries the origninal payer's system for updates to the Task.  This is either done by polling at regular intervals or by responding to a Subscription notification.  
+5. The new payer queries the original payer's system for updates to the Task.  This is either done by polling at regular intervals or by responding to a Subscription notification.  
 
 6. When the `Task.status` is completed, the new payer retrieves the [Coverage Transition Document](#coverage-transition-document-structure) pointed to by the `Task.output`.
 
@@ -71,7 +71,7 @@ The following diagram illustrates the workflow that is supported by this impleme
 #### Authorization
 This IG supplements PDex and allows the use of the same authorization process for member directed exchange. By using the SMART on FHIR implementation of OAuth 2.0 and providing an appropriate access token from an original payer's system to a new payer at the request of a member, the new payer's application is able to authenticate to the original payer's system and gain access to information authorized by the member.
 
-Since the CMS Notice of Proposed Rule Making requires that the member may direct the exchange of information from payers for up to five years after a member leaves a plan, there may be the need to permit new payers to access more than just the prior plan.  It may be necessary to include a number of prior plans that fall within the 5 year time frame.  Payer systems **SHALL** therefore allow members to authorize multiple other payers to retrieve relevant information.  Note that while regulations may establish a minimum period of time over which payers must provide data, this guide establishes no maximum.  Payers are free to share information relevant to transition of coverage that covers a longer period of time if it is available.
+Since the CMS Notice of Proposed Rule Making requires that the member may direct the exchange of information from payers for up to five years after a member leaves a plan, there may be the need to permit new payers to access more than just the prior plan.  It may be necessary to include a number of prior plans that fall within the 5-year time frame.  Payer systems **SHALL** therefore allow members to authorize multiple other payers to retrieve relevant information.  Note that while regulations may establish a minimum period of time over which payers must provide data, this guide establishes no maximum.  Payers are free to share information relevant to transition of coverage that covers a longer period of time if it is available.
 
 ##### Handling Sensitive Data
 Payers **SHALL** provide a method for past members to authorize the exchange sensitive information as defined by federal, state and, where appropriate, local statue.  In the event that a member does not permit a payer to exchange sensitive data, the payer **SHALL** have a method to sequester such information and make it unavailable for exchange.  This **SHOULD** happen as part of the authorization process.
@@ -91,7 +91,7 @@ While fulfilling the request, the original payer **MAY** update `Task.status` or
 
 When the document is available, original payer **SHALL** update `Task.status` to `completed` and provide a reference to the [Coverage Transition document](#coverage-transition-document-structure) resource in `Task.output`.    An example can be seen [here](Task-completed.html).
 
-The payer may be unable to complete a request if the member is unknown or the information requested cannot be provided.  In these cases, the original payer **SHALL** indicate that a requests was not completed by updating `Task.status` to `failed` and, optionally, `Task.statusReason`.  An example can be seen [here](Task-failed.html).
+The payer may be unable to complete a request if the member is unknown or the information requested cannot be provided.  In these cases, the original payer **SHALL** indicate that a request was not completed by updating `Task.status` to `failed` and, optionally, `Task.statusReason`.  An example can be seen [here](Task-failed.html).
 
 There are two options for monitoring the Task to verify acceptance, determine progress and determine if the requested document is ready for retrieval: subscription and polling.
 
@@ -109,7 +109,7 @@ GET [base]/Task/1135804
 When the document is available, original payer **SHALL** update `Task.status` to `completed` and provide a reference to the [Coverage Transition document](#coverage-transition-document-structure) resource in `Task.output`.
 
 #### Retrieving the document
-When the `Task.status` is `completed`, the Task will have an output element with the name 'document' that is a reference to the requested coverage transition document.  On retrieving the Task and finding it in completed state, the new payer **SHALL** perform a 'read' on the specified URL for the document referenced in the `Task.output` element for the newly created document, again using the previously supplied token.  The new payer can then process the document contents as necessry to ensure a smooth transition of care.
+When the `Task.status` is `completed`, the Task will have an output element with the name 'document' that is a reference to the requested coverage transition document.  On retrieving the Task and finding it in completed state, the new payer **SHALL** perform a 'read' on the specified URL for the document referenced in the `Task.output` element for the newly created document, again using the previously supplied token.  The new payer can then process the document contents as necessary to ensure a smooth transition of care.
 
 NOTES:
 
@@ -121,7 +121,7 @@ NOTES:
 
 
 ### Data structure
-This IG uses a [FHIR document]({{site.data.fhir.path}}documents.html) approach to organizing the information shared by the original payer system.  This aligns with the approach typically used for any other sort of transition of responsibility (be it clinical or administrative responsibility).  The document approach allows arbitrary data objects (typically FHIR resources) in logical groupings for human consumption/review and allows human narrative to provide context and guidance on interpretting and using the information.
+This IG uses a [FHIR document]({{site.data.fhir.path}}documents.html) approach to organizing the information shared by the original payer system.  This aligns with the approach typically used for any other sort of transition of responsibility (be it clinical or administrative responsibility).  The document approach allows arbitrary data objects (typically FHIR resources) in logical groupings for human consumption/review and allows human narrative to provide context and guidance on interpreting and using the information.
 
 The original payer **SHOULD** send all information they have available they believe to be reasonably necessary for the new payer to make a determination of medical necessity.  (Future versions of this specification are expected to tighten this requirement to **SHALL**.)  The original payer is NOT expected solicit data from other organizations, merely to share the data it already has available.  All information disclosed to the new payer is expected to be disclosed within the Coverage Transition document defined by this specification.  Disclosure of information via phone, fax or other means is non-conformant.
 
@@ -184,7 +184,7 @@ While it is technically possible to send raw NCPDP, X12 or other content in this
 When interpreting information shared in a coverage transfer document, it is often helpful to understand the source and history of the information being shared.  This also allows the receiving payer to better reconcile the shared information with data shared from other sources.  For this reason, resources shared as 'supporting' information SHOULD be accompanied by Provenance instances complying with the [PDex Provenance profile]({{site.data.fhir.ver.pdex}}/StructureDefinition-pdex-provenance.html) as additional 'supporting information' entries.
 
 ##### Other Documentation
-These sections allow conveying information that is not directly related to a current active therapy but which may be relevant to allowing the new payer to provide appropriate care.  For example, conveying that a patient has had a double-mastectomy in the past.  That may not be related to 'active therapy', but would still be relevant in terms of the new payer knowing not to send reminders for mamogram treatments.
+These sections allow conveying information that is not directly related to a current active therapy but which may be relevant to allowing the new payer to provide appropriate care.  For example, conveying that a patient has had a double-mastectomy in the past.  That may not be related to 'active therapy', but would still be relevant in terms of the new payer knowing not to send reminders for mammogram treatments.
 
 The expectation is that the original payer may have this kind of information available and **SHOULD** send it where it could be relevant to ongoing care activities; however, there is not a requirement to send information unless it is associated with active treatment.
 
@@ -195,6 +195,6 @@ Multiple sections are allowed so that separate narratives can be used to group r
 
 2. At the moment, this IG is quite flexible with how information is encoded.  Future versions of this IG will likely impose additional expectations, at least for certain types of conditions/therapies, as it becomes more obvious where additional interoperability requirements can result in less manual effort/reduced time in processing transitions in coverage.
 
-3. The US Core profiles impose terminology expectations that reflect commonly used clinical terminologies.  These may not always align with commonly used billing codes.  While billing codes may be sent as well (as additional translations), payers SHALL translate to the appropriate clinical terminology (e.g. NDC or HCPCS drug codes codes to RxNorm) in order to comply with the US Core profiles if an appropriate code exists in the US Core value set.
+3. The US Core profiles impose terminology expectations that reflect commonly used clinical terminologies.  These may not always align with commonly used billing codes.  While billing codes may be sent as well (as additional translations), payers SHALL translate to the appropriate clinical terminology (e.g. NDC or HCPCS drug codes to RxNorm) in order to comply with the US Core profiles if an appropriate code exists in the US Core value set.
 
-4. The Coverage Transition document structure is open-ended.  Additional sections and sub-sections are permitted and additional data elements (including extensions) are permitted as part of the document instance.  Additional elements should never be used in place of 'standard' elements, but can be sent in addition to provide additional context to systems that understand the additional discrete data.  All important information should be reflected in the resource narrative (text) elements and/or in the section.text elements.
+4. The Coverage Transition document structure is open-ended.  Additional sections and sub-sections are permitted and additional data elements (including extensions) are permitted as part of the document instance.  Additional elements should never be used in place of 'standard' elements but can be sent in addition to provide additional context to systems that understand the additional discrete data.  All important information should be reflected in the resource narrative (text) elements and/or in the section.text elements.
