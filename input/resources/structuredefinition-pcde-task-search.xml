@@ -21,6 +21,10 @@
     <element id="Task.status">
       <path value="Task.status"/>
     </element>
+    <element id="Task.intent">
+      <path value="Task.intent"/>
+      <fixedCode value="order"/>
+    </element>
 		<element id="Task.requester">
 			<path value="Task.requester"/>
 			<type>

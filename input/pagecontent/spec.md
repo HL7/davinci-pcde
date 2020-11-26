@@ -1,4 +1,4 @@
-This page is broken into three sections which outline the expectations for systems wishing to comply with the IG:
+This page is divided into three sections which outline the expectations for systems wishing to comply with the IG:
 * General [context](#context) that implementers need to understand in reading the remainder of the guide
 
 * A description of the technical [data exchange](#data-exchange) mechanisms by which a patient requests and enables that information to be transmitted from the original payer to the new payer and the means by which that transfer actually occurs.

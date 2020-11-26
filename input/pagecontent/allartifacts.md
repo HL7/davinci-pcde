@@ -18,6 +18,8 @@ The FHIR artifacts used by PCDE are organized according to whether the content d
   </tr>
   <tr>
     <td><a href="{{site.data.fhir.ver.pas}}/artifacts.html">Da Vinci Prior Authorization Support (PAS) (1.0.0 - STU1)</a></td>
+  <tr>
+    <td><a href="{{site.data.fhir.ver.subscription}}/artifacts.html">Subscription Backport (Jan 2021 ballot)</a></td>
   </tr>
 </table>
 
