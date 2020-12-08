@@ -18,9 +18,9 @@
   }
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"CHECK_MEMERSHIP_ONLY"}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The filter \"concept descendent-of _section\" was not understood in the context of http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes (from http://tx.fhir.org/r4)"
+  "display" : "Active Treatments",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -42,9 +42,9 @@ v: {
   }
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"CHECK_MEMERSHIP_ONLY"}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The filter \"concept descendent-of _section\" was not understood in the context of http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes (from http://tx.fhir.org/r4)"
+  "display" : "Treatment",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -66,9 +66,9 @@ v: {
   }
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"CHECK_MEMERSHIP_ONLY"}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The filter \"concept descendent-of _section\" was not understood in the context of http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes (from http://tx.fhir.org/r4)"
+  "display" : "Prior Coverage",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -90,8 +90,8 @@ v: {
   }
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"CHECK_MEMERSHIP_ONLY"}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The filter \"concept descendent-of _section\" was not understood in the context of http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes (from http://tx.fhir.org/r4)"
+  "display" : "Supporting Information",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------

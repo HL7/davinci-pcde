@@ -1,9 +1,9 @@
 This page is divided into three sections which outline the expectations for systems wishing to comply with the IG:
-* General [context](#context) that implementers need to understand in reading the remainder of the guide
+* general [context](#context) that implementers need to understand in reading the remainder of the guide;
 
-* A description of the technical [data exchange](#data-exchange) mechanisms by which a patient requests and enables that information to be transmitted from the original payer to the new payer and the means by which that transfer actually occurs.
+* a description of the technical [data exchange](#data-exchange) mechanisms by which a patient requests and enables that information to be transmitted from the original payer to the new payer and how that transfer actually occurs; and
 
-* A description of the [data structure](#data-structure) to be shared that supports a transition of coverage responsibility from one payer plan to another
+* a description of the [data structure](#data-structure) to be shared that supports a transition of coverage responsibility from one payer plan to another
 
 ### Context
 #### Pre-reading
@@ -11,7 +11,7 @@ Before reading this formal specification, implementers should first familiarize 
 
 * The [Use Cases & Overview](usecases.html) page provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
 
-* The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have necessary foundation to understand the constraints and usage guidance described here.
+* The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have the necessary foundation to understand the constraints and usage guidance described here.
 
 #### Conformance and Conventions
 This implementation guide adheres to the conformance documentation conventions found in the [HRex Conformance Expecations page]({{site.data.fhir.ver.hrex}}/conformance.html), including expectations around the meaning of 'Must Support'.
@@ -25,14 +25,14 @@ The full set of profiles defined in or used by this implementation guide can be 
 This IG defines custom codes for document types and sections.  Implementers **SHALL** consider the codes 'temporary'.  After implementation testing and confirmation, these custom codes will migrate to standardized codes in an official code system - most likely LOINC.
 
 ### Data Exchange
-This data exchange builds on the Da Vinci [Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}}) and [Payer Data Exchange (PDex)]({{site.data.fhir.ver.pdex}}) implementation guides, leveraging the [OAuth 2.0-based]({{site.data.fhir.ver.pdex}}/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [Task-based requested exchange]({{site.data.fhir.ver.hrex}}/exchanging-request.html#task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
+This data exchange builds on the Da Vinci [Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}}) and [Payer Data Exchange (PDex)]({{site.data.fhir.ver.pdex}}) implementation guides, optionally leveraging the [OAuth 2.0-based]({{site.data.fhir.ver.pdex}}/3-4_Interaction_Methods.html#3-4-2-oauth20-and-fhir-api) mechanism to enable data flow between two payer systems and the [Task-based requested exchange]({{site.data.fhir.ver.hrex}}/exchanging-request.html#task) mechanism to request the desired document.  This section of the implementation guide provides details on that flow.
 
 #### Pre-conditions
 For this implementation guide to be applicable, the following conditions must be met:
 
 * A member of a covered plan has enrolled in another covered plan offered by another payer.
 
-* That member is currently being treated for some chronic or acute condition and wishes the treatment to continue.
+* That member is currently being treated for some chronic or acute condition.
 
 * The new payer has performed a patient / coverage resolution process and has information about relevant prior coverage.
 
@@ -69,9 +69,7 @@ The following diagram illustrates the workflow that is supported by this impleme
 {::options parse_block_html="true" /}
 
 #### Authorization
-This IG supplements PDex and allows the use of the same authorization process for member directed exchange. By using the SMART on FHIR implementation of OAuth 2.0 and providing an appropriate access token from an original payer's system to a new payer at the request of a member, the new payer's application is able to authenticate to the original payer's system and gain access to information authorized by the member.
-
-Since the CMS Notice of Proposed Rule Making requires that the member may direct the exchange of information from payers for up to five years after a member leaves a plan, there may be the need to permit new payers to access more than just the prior plan.  It may be necessary to include a number of prior plans that fall within the 5-year time frame.  Payer systems **SHALL** therefore allow members to authorize multiple other payers to retrieve relevant information.  Note that while regulations may establish a minimum period of time over which payers must provide data, this guide establishes no maximum.  Payers are free to share information relevant to transition of coverage that covers a longer period of time if it is available.
+This IG provides for the optional use of the same authorization process PDex uses for member directed exchange. By using the SMART on FHIR implementation of OAuth 2.0 and providing an appropriate access token from an original payer's system to a new payer at the request of a member, the new payer's application is able to authenticate to the original payer's system and gain access to information authorized by the member.
 
 ##### Handling Sensitive Data
 Payers **SHALL** provide a method for past members to authorize the exchange sensitive information as defined by federal, state and, where appropriate, local statue.  In the event that a member does not permit a payer to exchange sensitive data, the payer **SHALL** have a method to sequester such information and make it unavailable for exchange.  This **SHOULD** happen as part of the authorization process.
@@ -96,10 +94,10 @@ The payer may be unable to complete a request if the member is unknown or the in
 There are two options for monitoring the Task to verify acceptance, determine progress and determine if the requested document is ready for retrieval: subscription and polling.
 
 #### Subscription
-Payers **MAY** support [subscriptions]({{site.data.fhir.ver.hrex}}/exchanging-subscription.html) to allow monitoring of changes to the Task resource rather than relying on [polling]({{site.data.fhir.ver.hrex}}/exchanging-polling.html).  Payers making use of subscription SHOULD comply with the [Subscription Backport IG]({{site.data.fhir.ver.subscription}}) which allows pre-adoption of R5 subscription mechanisms in R4-conformant systems.
+Payers **SHOULD** support [subscriptions]({{site.data.fhir.ver.hrex}}/exchanging-subscription.html) to allow monitoring of changes to the Task resource rather than relying on [polling]({{site.data.fhir.ver.hrex}}/exchanging-polling.html).  Payers making use of subscription SHOULD comply with the [Subscription Backport IG]({{site.data.fhir.ver.subscription}}) which allows pre-adoption of R5 subscription mechanisms in R4-conformant systems.
 
 ##### Polling
-If no subscription was created, the new payer **SHALL** routinely perform a read on the orginal payer's system using the id of the originally created Taskto receive updates to the Task.  Polling is performed by executing a `GET` operation using the `id` received from the original payer when the Task was created, optionally using the `If-Modified-Since` header to limit the data returned if the Task has not been updated since it was last polled.
+If no subscription was created, the new payer **SHALL** routinely perform a read on the original payer's system using the id of the originally created Task to receive updates to the Task.  Polling is performed by executing a `GET` operation using the `id` received from the original payer when the Task was created, optionally using the `If-Modified-Since` header to limit the data returned if the Task has not been updated since it was last polled.
 
 Example:
 ```
@@ -165,12 +163,12 @@ For each active treatment the following three sub-sections are available:
 ###### Treatment
 
 This mandatory section defines a single treatment.  The [CarePlan](StructureDefinition-profile-careplan.html) instance that is the entry will convey the following information:
-* What the treatment is (coded if possible, though text is permitted where a standardized procedure/medication/product code does not exist)
+* Identiifcation of active treatment is (coded if possible, though text is permitted where a standardized procedure/medication/product code does not exist)
 * The condition that caused the need for treatment (coded as ICD-10-CM if possible)
 * Any protocol being followed in the treatment (referenced by URL)
 
 ###### Prior Coverage
-This section will include the most recent relevant Claim(s) and/or Prior Authorization(s) associated with the treatment.  The purpose is to give a sense of how much of the treatments have been authorized, how many have already been performed/paid for, when the most recently billed occurrence was, etc.  Section narrative may provide additional detail.
+This section will include the most recent relevant Claim(s) and/or Prior Authorization(s) associated with the treatment.  The purpose is to give a sense of the number of authorized treatments, how many have already been performed/paid for, date of the most recently billed occurrence, etc.  Section narrative may provide additional detail.
 
 Prior Authorizations SHOULD comply with the [PAS Prior Authorization]({{site.data.fhir.ver.pas}}/profile-claim.html) and [PAS Prior Authorization Response]({{site.data.fhir.ver.pas}}/profile-claimresponse.html) profile.  As yet, there are no Da Vinci profiles available for Claim resources, so technically any FHIR-valid Claim and ClaimResponse resources are allowed, though alignment with the PAS Prior Authorization profiles is recommended.  The [US Core DocumentReference]({{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-documentreference.html) profile can be used to convey PDF or other non-discrete representations if full FHIR-encoding is not possible.
 
@@ -191,7 +189,7 @@ The expectation is that the original payer may have this kind of information ava
 Multiple sections are allowed so that separate narratives can be used to group resources that are related together.  Narrative-only sections can be used to convey information for which no discrete data exists or is relevant.
 
 #### Additional Notes
-1.  The exchanges covered by this implementation guide are subject to appropriate regulation regarding operations and consent, including HIPAA and 42CFR Part II privacy standards. The entities participating in these exchanges should be familiar with and adhere to these and other relevant regulatory requirements.
+1.  The exchanges covered by this implementation guide are subject to appropriate regulation regarding operations and consent, includingstate and federal privacy standards. The entities participating in these exchanges should be familiar with and adhere to these and other relevant regulatory requirements.
 
 2. At the moment, this IG is quite flexible with how information is encoded.  Future versions of this IG will likely impose additional expectations, at least for certain types of conditions/therapies, as it becomes more obvious where additional interoperability requirements can result in less manual effort/reduced time in processing transitions in coverage.
 

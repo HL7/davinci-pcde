@@ -2,12 +2,12 @@
 Patients that move from one payer to another frequently experience interruptions or delays to existing care for chronic and acute conditions related to the inability of the new payer to obtain information about the ongoing treatment, understand its progress and verify the clinical need for such treatments.  This frequently requires the patient or providers to change therapies, tolerate delays in care, see additional providers or schedule additional visits, and fill out or resubmit additional documentation showing that the care is medically necessary and appropriate. The process creates a significant burden on providers, add unnecessary costs, and introduces risk to the patient.
 
 ### Background
-The Healthcare industry in the US has recognized the need to support, where possible, continuity of care for both chronic and acute problems for individuals that move from one payer to another. The CMS NPRM on interoperability published in the Federal Register on March 3, 2019, requires that payers enable members to exchange clinical information from a prior payer to the current payer for a period of 5 years after they leave a plan and move to another covered plan. The exchange of information is intended, as indicated in the preamble to the NPRM, to enable continuity of care as a member moves from one covered plan to another without:
+The Healthcare industry in the US has recognized the need to support, where possible, continuity of care for both chronic and acute problems for individuals that move from one payer to another. The CMS NPRM on interoperability published in the Federal Register on March 3, 2019, requested input on requiring that payers be able to exchange clinical information from a prior payer to the current payer. The exchange of information is intended, as indicated in the preamble to the NPRM, to enable continuity of care as a member moves from one covered plan to another without:
 1. forcing the member to pay for the care unless required as part of the change in plan coverage
 2. have care terminated,  or
 3. requiring providers to submit additional documentation to the new plan that was already available to the prior plan.
 
-The goal is to provide for continuity of care and to minimize provider burden.  While the CMS NPRM points to the ability to exchange clinical data that is, at a minimum, defined by USCDI V1.0, the ability to exchange this data set does not provide the full set of information to enable the new payer to meet the goals stated above.
+The goal is to provide for continuity of care and to minimize provider burden.
 
 ### In Scope
 This Implementation Guide (IG) is focused on organizing and exchanging information from a prior payer associated with current treatments to allow the new payer to continue these treatments without placing an additional burden on either the member or the provider or creating interruptions in care.
@@ -15,7 +15,7 @@ This Implementation Guide (IG) is focused on organizing and exchanging informati
 ### Out-of-Scope
 This implementation guide is not:
 
-1. intended to define the exchange of information from any entity other than a current or prior payer to a member-directed entity;
+1. intended to define the exchange of information from any entity other than a prior payer to a current payer;
 2. prescriptive on what information is required to substantiate medical necessity for any treatment;
 3. expecting the exchange of plan proprietary guidelines; or
 4. intended to fully automate the review and authorization process for continuity of care for the new payer for current treatments
