@@ -14,10 +14,13 @@ INFORMATION: ValueSet/PCDESectionCode: ValueSet: Validate resource against profi
 
 # These are the profiles declared for these examples and they are validating as expected
 INFORMATION: Bundle/pcde-document: Bundle: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-pcde-bundle
+INFORMATION: Bundle/pcde-document: Bundle.entry[0].resource.ofType(Composition): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Composition
+INFORMATION: Bundle/pcde-document: Bundle.entry[0].resource.ofType(Composition): Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition - listed in meta
 INFORMATION: Task/completed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search
 INFORMATION: Task/failed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search
 INFORMATION: Task/in-progress: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-search
 INFORMATION: Task/requested: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/pcde-task-request
+
 
 # This is validated in the Bundle example
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pcde/StructureDefinition/profile-composition'): The Implementation Guide contains no explicitly linked examples for this profile
@@ -25,6 +28,18 @@ INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pcd
 
 # There is no expectation (at the moment) that the terminology server will be able to validate codes from HCPCS Level II
 WARNING: ValueSet.where(id = 'PCDEPlanAction'): Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.6.285
+
+# There is no expectation we will be able to validate CPT codes
+Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+
+# These X12 value sets aren't known by the terminology server (and won't likely ever be)
+Code System URI 'http://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/1525' is unknown so the code cannot be validated
+Code System URI 'http://codesystem.x12.org/005010/306' is unknown so the code cannot be validated
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/01/00/1525 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/request/2000F/UM/1/02/00/1322 not found by validator
+ValueSet https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 not found by validator
 
 # The following files don't yet exist at the target link, but they will
 #The link 'http://hl7.org/fhir/us/davinci-pas/2019Sep/artifacts.html' for "PAS Profiles (0.1.0 - Sept 2019 ballot)" cannot be resolved
@@ -45,13 +60,12 @@ WARNING: ValueSet.where(id = 'PCDEPlanAction'): Error from server: Unable to pro
 None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/doc-typecodes (http://hl7.org/fhir/ValueSet/doc-typecodes, and a code is recommended to come from this value set) (codes = http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEDocumentCode#pcde)
 
 # These are fake code systems, so inability to validate is expected
-INFORMATION: Bundle/pcde-document: Bundle.entry[4].resource.ofType(CarePlan).activity[0].detail.code.coding[0]: Code System URI 'http://example.org/SERVICE_TYPE_CODE' is unknown so the code cannot be validated
-INFORMATION: Bundle/pcde-document: Bundle.entry[5].resource.ofType(Claim).type.coding[0]: Code System URI 'http://example.org/UM_REQUEST_CATEGORY_CODE' is unknown so the code cannot be validated
-INFORMATION: Bundle/pcde-document: Bundle.entry[8].resource.ofType(ServiceRequest).code.coding[0]: Code System URI 'http://example.org/SERVICE_TYPE_CODE' is unknown so the code cannot be validated
-INFORMATION: Bundle/pcde-document: Bundle.entry[10].resource.ofType(PractitionerRole).code[0].coding[0]: Code System URI 'http://example.org/fhir/NamingSystem/ENTITY_IDENTIFIER_CODE' is unknown so the code cannot be validated
-INFORMATION: Bundle/pcde-document: Bundle.entry[4].resource.ofType(CarePlan).activity[0].detail.reasonReference[0]: Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition
-INFORMATION: Bundle/pcde-document: Bundle.entry[5].resource.ofType(Claim).diagnosis[0].diagnosis.ofType(Reference): Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition
+Code System URI 'http://example.org/SERVICE_TYPE_CODE' is unknown so the code cannot be validated
+Code System URI 'http://example.org/UM_REQUEST_CATEGORY_CODE' is unknown so the code cannot be validated
+Code System URI 'http://example.org/fhir/NamingSystem/ENTITY_IDENTIFIER_CODE' is unknown so the code cannot be validated
 
 # This info is for debugging and not relevant
+INFORMATION: Bundle/pcde-document: Bundle.entry[4].resource.ofType(CarePlan).activity[0].detail.reasonReference[0]: Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition
+INFORMATION: Bundle/pcde-document: Bundle.entry[5].resource.ofType(Claim).diagnosis[0].diagnosis.ofType(Reference): Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition
 INFORMATION: Bundle/document-example: Bundle.entry[4].resource.ofType(CarePlan).activity[0].detail.reasonReference[0]: Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition
 INFORMATION: Bundle/document-example: Bundle.entry[5].resource.ofType(Claim).diagnosis[0].diagnosis.ofType(Reference): Details for Condition/1 matching against Profilehttp://hl7.org/fhir/StructureDefinition/Condition

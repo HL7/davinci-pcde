@@ -4,7 +4,7 @@
   <url value="http://hl7.org/fhir/us/davinci-pcde/ImplementationGuide/hl7.fhir.us.davinci-pcde"/>
   <version value="1.0.0"/>
   <name value="PayerCoverageDecisionExchange"/>
-  <title value="Da Vinci - Payer Coverage Decision Exchange"/>
+  <title value="Da Vinci - Payer Coverage Decision Exchange (PCDE)"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - Financial Management Work Group"/>
@@ -29,12 +29,12 @@
     <version value="3.1.0"/>
   </dependsOn>
   <dependsOn id="hrex">
-    <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
+    <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex"/>
     <packageId value="hl7.fhir.us.davinci-hrex"/>
     <version value="0.2.0"/>
   </dependsOn>
   <dependsOn id="pdex">
-    <uri value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
+    <uri value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
     <packageId value="hl7.fhir.us.davinci-pdex"/>
     <version value="current"/>
   </dependsOn>
@@ -146,6 +146,10 @@
     <parameter>
       <code value="find-other-resources"/>
       <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="path-expansion-params"/>
+      <value value="terminology-settings.json"/>
     </parameter>
   </definition>
 </ImplementationGuide>
