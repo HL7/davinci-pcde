@@ -33,13 +33,14 @@
         <author>
           <reference value="Practitioner/1"/>
         </author>
-        <title value="Example PCDE Document for Diabetes patient"/>
+        <title value="Coverage Decision Exchange Document (Joe Smith, 2019-07-21)"/>
         <event>
           <detail>
             <reference value="Coverage/1"/>
           </detail>
         </event>
         <section>
+          <title value="Active Treatments"/>
           <code>
             <coding>
               <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
@@ -47,6 +48,7 @@
             </coding>
           </code>
           <section>
+            <title value="Consulation re: MCI"/>
             <code>
               <coding>
                 <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
@@ -58,6 +60,7 @@
             </entry>
           </section>
           <section>
+            <title value="Prior coverage"/>
             <code>
               <coding>
                 <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
@@ -72,6 +75,7 @@
             </entry>
           </section>
           <section>
+            <title value="Supporting information"/>
             <code>
               <coding>
                 <system value="http://hl7.org/fhir/us/davinci-pcde/CodeSystem/PCDEtempCodes"/>
@@ -376,7 +380,7 @@
         <intent value="order"/>
         <code>
           <coding>
-            <system value="http://example.org/SERVICE_TYPE_CODE"/>
+            <system value="http://codesystem.x12.org/005010/1365"/>
             <code value="3"/>
             <display value="Consultation"/>
           </coding>

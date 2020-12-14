@@ -147,6 +147,10 @@
       <code value="find-other-resources"/>
       <value value="true"/>
     </parameter>
+		<parameter>
+      <code value="show-reference-messages"/>
+      <value value="true"/>
+    </parameter>
     <parameter>
       <code value="path-expansion-params"/>
       <value value="terminology-settings.json"/>

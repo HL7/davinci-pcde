@@ -32,6 +32,9 @@ WARNING: ValueSet.where(id = 'PCDEPlanAction'): Error from server: Unable to pro
 # There is no expectation we will be able to validate CPT codes
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
 
+# The HL7 validator doesn't yet validate CMS codes
+Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
+
 # These X12 value sets aren't known by the terminology server (and won't likely ever be)
 Code System URI 'http://codesystem.x12.org/005010/1322' is unknown so the code cannot be validated
 Code System URI 'http://codesystem.x12.org/005010/1365' is unknown so the code cannot be validated

@@ -25,8 +25,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:9cdb2418-debb-44dd-8eef-431fe44cd3f9",
-    "timestamp" : "2020-12-08T06:27:46.675Z",
+    "identifier" : "urn:uuid:0809dd2b-6de3-4395-ad80-4a25e2467ebd",
+    "timestamp" : "2020-12-14T20:34:12.192Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -37,7 +37,7 @@ e: {
     },
     {
       "name" : "version",
-      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200731"
+      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20200901"
     }],
     "contains" : [{
       "system" : "http://snomed.info/sct",
@@ -5070,8 +5070,8 @@ e: {
       "url" : "http://hl7.org/fhir/StructureDefinition/valueset-unclosed",
       "valueBoolean" : true
     }],
-    "identifier" : "urn:uuid:1cf9dcb0-2179-43f2-9d1a-9b0fdcc9f2f1",
-    "timestamp" : "2020-12-08T06:28:32.050Z",
+    "identifier" : "urn:uuid:4cb8fe48-f6c2-48dd-ac50-4bb6f3102400",
+    "timestamp" : "2020-12-14T20:35:09.770Z",
     "parameter" : [{
       "name" : "limitedExpansion",
       "valueBoolean" : true
@@ -5082,7 +5082,7 @@ e: {
     },
     {
       "name" : "version",
-      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200731"
+      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20200901"
     }],
     "contains" : [{
       "system" : "http://snomed.info/sct",
