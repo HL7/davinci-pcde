@@ -14,7 +14,7 @@ The FHIR artifacts used by PCDE are organized according to whether the content d
     <td><a href="{{site.data.fhir.ver.hrex}}/artifacts.html">Da Vinci Health Record Exchange (HRex) (0.2.0 - Sept 2020 ballot)</a></td>
   </tr>
   <tr>
-    <td><a href="{{site.data.fhir.ver.pdex}}/profiles.html">Da Vinci Payer Data Exchange (PDex) (1.0.0 STU1)</a></td>
+    <td><a href="{{site.data.fhir.ver.pdex}}/artifacts.html#structures-resource-profiles">Da Vinci Payer Data Exchange (PDex) (1.0.0 STU1)</a></td>
   </tr>
   <tr>
     <td><a href="{{site.data.fhir.ver.pas}}/artifacts.html">Da Vinci Prior Authorization Support (PAS) (1.0.0 - STU1)</a></td>

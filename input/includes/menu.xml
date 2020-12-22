@@ -47,7 +47,7 @@
         <a href="{{site.data.fhir.ver.hrex}}/profiles.html">HRex Profiles (0.2.0 - Sept 2029 ballot)</a>
       </li>
       <li>
-        <a href="{{site.data.fhir.ver.pdex}}/profiles.html">PDex Profiles (1.0.0 - First STU)</a>
+        <a href="{{site.data.fhir.ver.pdex}}/artifacts.html#structures-resource-profiles">PDex Profiles (1.0.0 - First STU)</a>
       </li>
       <li>
         <a href="{{site.data.fhir.ver.pas}}/artifacts.html">PAS Profiles (1.0.0 - First STU)</a>
